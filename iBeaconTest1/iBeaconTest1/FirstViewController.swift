@@ -16,12 +16,16 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     let colors = [
         36783: UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1),    //KILz
         22239: UIColor(red: 0/255, green: 0/255, blue: 255/255, alpha: 1),    //KT80
-        27120: UIColor(red: 154/255, green: 65/255, blue: 183/255, alpha: 1)  //vVmc
+        27120: UIColor(red: 154/255, green: 65/255, blue: 183/255, alpha: 1), //vVmc
+        2376:  UIColor(red: 33/255, green: 183/255, blue: 55/255, alpha: 1),  //zr3i
+        54482: UIColor(red: 0/255, green: 255/255, blue:255/255, alpha: 1)    //Chfq
     ]
     let names = [
         36783: "KILz", //KILZ
         22239: "KT80", //KT80
-        27120: "vVmc"  //vVmc
+        27120: "vVmc", //vVmc
+        2376:  "zr3i", //zr3i
+        54482: "Chfq"  //Chfq
     ]
     
     override func viewDidLoad() {
