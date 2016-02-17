@@ -1,2 +1,2 @@
 # iBeacon-Navigation
-Intelligent Environments Project by: Jordy Matsari, Mijnisha Singh & Britte Visser
+Intelligent Environments Project by: Jordy Matsari, Mijnisha Singh & Britte Visser!
