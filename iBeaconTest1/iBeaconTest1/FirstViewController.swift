@@ -12,8 +12,9 @@ import CoreLocation
 class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
+    //beacon group identifier
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E")!, identifier: "Visios")
-    let colors = [
+    let colors = [ //color on screen when beacon is closest
         36783: UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1),    //KILz
         22239: UIColor(red: 0/255, green: 0/255, blue: 255/255, alpha: 1),    //KT80
         27120: UIColor(red: 154/255, green: 65/255, blue: 183/255, alpha: 1), //vVmc
@@ -24,7 +25,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         3992: UIColor(red: 249/255, green: 163/255, blue:11/255, alpha: 1),    //XX1f
         24799: UIColor(red: 0/255, green: 128/255, blue:128/255, alpha: 1)    //icvL
     ]
-    let names = [
+    let names = [ //text shown on screen when beacon is closest
         36783: "KILz", //KILZ
         22239: "KT80", //KT80
         27120: "vVmc", //vVmc
