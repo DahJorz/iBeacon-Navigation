@@ -57,7 +57,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
 
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         //print(beacons)
-        let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown && $0.proximity != CLProximity.Far}
+        let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown && $0.proximity != CLProximity.Far && $0.proximity != CLProximity.Near}
         if (knownBeacons.count > 0){
             let closestBeacon = knownBeacons[0] as CLBeacon
             self.view.backgroundColor = self.colors[closestBeacon.minor.integerValue]
