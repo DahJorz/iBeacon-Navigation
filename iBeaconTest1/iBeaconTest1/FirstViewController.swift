@@ -12,7 +12,6 @@ import CoreLocation
 class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
-    //beacon group identifier
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E")!, identifier: "Visios")
     let colors = [ //color on screen when beacon is closest
         36783: UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1),    //KILz
@@ -26,15 +25,15 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         24799: UIColor(red: 0/255, green: 128/255, blue:128/255, alpha: 1)    //icvL
     ]
     let names = [ //text shown on screen when beacon is closest
-        36783: "KILz", //KILZ
-        22239: "KT80", //KT80
-        27120: "vVmc", //vVmc
+        36783: "KILz -> Rechts", //KILZ
+        22239: "KT80 -> Links", //KT80
+        27120: "vVmc -> Rechts", //vVmc
         2376:  "zr3i", //zr3i
         54482: "Chfq", //Chfq
         55620: "WPYp", //WPYp
         41997: "B5nr", //B5nr
-        3992:  "XX1f", //XX1f
-        24799: "icvL"  //icvL
+        3992:  "XX1f -> Rechts", //XX1f
+        24799: "icvL -> Rechts"  //icvL
     ]
     
     override func viewDidLoad() {
@@ -58,7 +57,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
 
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         //print(beacons)
-        let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown }
+        let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown && $0.proximity != CLProximity.Far}
         if (knownBeacons.count > 0){
             let closestBeacon = knownBeacons[0] as CLBeacon
             self.view.backgroundColor = self.colors[closestBeacon.minor.integerValue]
