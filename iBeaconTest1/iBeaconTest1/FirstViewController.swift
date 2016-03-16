@@ -11,8 +11,12 @@ import CoreLocation
 
 class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
+    @IBOutlet var instruction: UILabel!
+    //"F7826DA6-4FA2-4E98-8024-BC5B71E0893E" Visio beacons
+    //"74278BDA-B644-4520-8F0C-720EAF059935" Joey's beacons
+    
     let locationManager = CLLocationManager()
-    let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E")!, identifier: "Visios")
+    let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "B9407F30-F5F8-466E-AFF9-25556B57FE6D")!, identifier: "Visios")
     let colors = [ //color on screen when beacon is closest
         36783: UIColor(red: 255/255, green: 0/255, blue: 0/255, alpha: 1),    //KILz
         22239: UIColor(red: 0/255, green: 0/255, blue: 255/255, alpha: 1),    //KT80
@@ -22,7 +26,10 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         55620: UIColor(red: 255/255, green: 255/255, blue:0/255, alpha: 1),    //WPYp
         41997: UIColor(red: 128/255, green: 0/255, blue:0/255, alpha: 1),      //B5nr
         3992: UIColor(red: 249/255, green: 163/255, blue:11/255, alpha: 1),    //XX1f
-        24799: UIColor(red: 0/255, green: 128/255, blue:128/255, alpha: 1)    //icvL
+        24799: UIColor(red: 0/255, green: 128/255, blue:128/255, alpha: 1),    //icvL
+        29: UIColor(red: 255/255, green: 0/255, blue:0/255, alpha: 1),
+        30: UIColor(red: 0/255, green: 255/255, blue:0/255, alpha: 1),
+        27: UIColor(red: 0/255, green: 0/255, blue:255/255, alpha: 1)
     ]
     let names = [ //text shown on screen when beacon is closest
         36783: "KILz -> Rechts", //KILZ
@@ -33,7 +40,10 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         55620: "WPYp", //WPYp
         41997: "B5nr", //B5nr
         3992:  "XX1f -> Rechts", //XX1f
-        24799: "icvL -> Rechts"  //icvL
+        24799: "icvL -> Rechts", //icvL
+        29: "1", //joey
+        30: "2", //joey
+        27: "3"  //joey
     ]
     
     override func viewDidLoad() {
@@ -57,7 +67,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
 
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
         //print(beacons)
-        let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown && $0.proximity != CLProximity.Far && $0.proximity != CLProximity.Near}
+        let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown && $0.proximity != CLProximity.Far}
         if (knownBeacons.count > 0){
             let closestBeacon = knownBeacons[0] as CLBeacon
             self.view.backgroundColor = self.colors[closestBeacon.minor.integerValue]
@@ -66,6 +76,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
             label.center = CGPointMake(160, 284)
             label.textAlignment = NSTextAlignment.Center
             label.text = self.names[closestBeacon.minor.integerValue]
+            instruction.text = self.names[closestBeacon.minor.integerValue]
             //label.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
             label.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
             
