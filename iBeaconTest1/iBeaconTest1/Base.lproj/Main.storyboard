@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1068" y="-316"/>
+            <point key="canvasLocation" x="724" y="-920"/>
         </scene>
         <!--Naar Station-->
         <scene sceneID="wg7-f3-ORb">
@@ -100,7 +100,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="750" y="360"/>
+            <point key="canvasLocation" x="1642" y="-640"/>
+        </scene>
+        <!--Route Preview-->
+        <scene sceneID="BNj-Jm-TGd">
+            <objects>
+                <viewController id="EJV-ze-Bql" customClass="FourthViewController" customModule="iBeaconTest1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3bG-4y-5Lp"/>
+                        <viewControllerLayoutGuide type="bottom" id="91u-5X-VyR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5Io-Ef-FZK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Route Preview" image="first" id="Jtg-WQ-9KG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xZD-GQ-Rxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1642" y="219"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -115,11 +134,32 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="EJV-ze-Bql" kind="relationship" relationship="viewControllers" id="StB-rF-ZvJ"/>
+                        <segue destination="rNn-0O-A2P" kind="relationship" relationship="viewControllers" id="g7f-Th-4qt"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="0.0" y="0.0"/>
+            <point key="canvasLocation" x="8" y="24"/>
+        </scene>
+        <!--Instellingen-->
+        <scene sceneID="WCC-X4-LaG">
+            <objects>
+                <viewController id="rNn-0O-A2P" customClass="FourthViewController" customModule="iBeaconTest1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5rc-x9-6zX"/>
+                        <viewControllerLayoutGuide type="bottom" id="by4-DD-Ufo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iCl-cX-Rtb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Instellingen" image="second" id="dQt-2o-bV8"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="itB-qs-wu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="716" y="563"/>
         </scene>
     </scenes>
     <resources>

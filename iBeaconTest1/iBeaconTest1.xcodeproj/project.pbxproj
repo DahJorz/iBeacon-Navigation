@@ -15,6 +15,8 @@
 		5E08D5C01C72756A002F1AB0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E08D5BE1C72756A002F1AB0 /* LaunchScreen.storyboard */; };
 		5E08D5CB1C72756A002F1AB0 /* iBeaconTest1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E08D5CA1C72756A002F1AB0 /* iBeaconTest1Tests.swift */; };
 		5E08D5D61C72756A002F1AB0 /* iBeaconTest1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E08D5D51C72756A002F1AB0 /* iBeaconTest1UITests.swift */; };
+		5E4803C31C997F3400B98EF5 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4803C21C997F3400B98EF5 /* ThirdViewController.swift */; };
+		5E4803C51C997FE700B98EF5 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4803C41C997FE700B98EF5 /* FourthViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		5E08D5D11C72756A002F1AB0 /* iBeaconTest1UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iBeaconTest1UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E08D5D51C72756A002F1AB0 /* iBeaconTest1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconTest1UITests.swift; sourceTree = "<group>"; };
 		5E08D5D71C72756A002F1AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5E4803C21C997F3400B98EF5 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
+		5E4803C41C997FE700B98EF5 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 			children = (
 				5E08D5B31C727569002F1AB0 /* AppDelegate.swift */,
 				5E08D5B51C727569002F1AB0 /* FirstViewController.swift */,
+				5E4803C21C997F3400B98EF5 /* ThirdViewController.swift */,
+				5E4803C41C997FE700B98EF5 /* FourthViewController.swift */,
 				5E08D5B71C727569002F1AB0 /* SecondViewController.swift */,
 				5E08D5B91C727569002F1AB0 /* Main.storyboard */,
 				5E08D5BC1C727569002F1AB0 /* Assets.xcassets */,
@@ -262,7 +268,9 @@
 			files = (
 				5E08D5B81C727569002F1AB0 /* SecondViewController.swift in Sources */,
 				5E08D5B41C727569002F1AB0 /* AppDelegate.swift in Sources */,
+				5E4803C31C997F3400B98EF5 /* ThirdViewController.swift in Sources */,
 				5E08D5B61C727569002F1AB0 /* FirstViewController.swift in Sources */,
+				5E4803C51C997FE700B98EF5 /* FourthViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -497,6 +505,7 @@
 				5E08D5DC1C72756A002F1AB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E08D5DD1C72756A002F1AB0 /* Build configuration list for PBXNativeTarget "iBeaconTest1Tests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +514,7 @@
 				5E08D5DF1C72756A002F1AB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5E08D5E01C72756A002F1AB0 /* Build configuration list for PBXNativeTarget "iBeaconTest1UITests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +523,7 @@
 				5E08D5E21C72756A002F1AB0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

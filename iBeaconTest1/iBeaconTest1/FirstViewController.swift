@@ -12,6 +12,7 @@ import CoreLocation
 class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var instruction: UILabel!
+    
     //"F7826DA6-4FA2-4E98-8024-BC5B71E0893E" Visio beacons
     //"74278BDA-B644-4520-8F0C-720EAF059935" Joey's beacons
     
