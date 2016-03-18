@@ -91,6 +91,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
             if(closestBeacon.proximity == CLProximity.Immediate){
                 accuracy.text = "Immediate"
             }
+            
             //let accuracyInMeters = String(knownBeacons[0].proximity)
             //let accuracyText = String(accuracyInMeters)
             //accuracy.text = accuracyInMeters
