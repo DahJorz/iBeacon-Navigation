@@ -120,7 +120,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5OJ-mj-iWq">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ako-logo" translatesAutoresizingMaskIntoConstraints="NO" id="5OJ-mj-iWq">
                                 <rect key="frame" x="142" y="121" width="294" height="374"/>
                                 <gestureRecognizers/>
                                 <connections>
@@ -205,6 +205,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ako-logo" width="632" height="308"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
