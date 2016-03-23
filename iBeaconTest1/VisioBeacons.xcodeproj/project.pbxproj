@@ -16,7 +16,6 @@
 		5E08D5CB1C72756A002F1AB0 /* iBeaconTest1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E08D5CA1C72756A002F1AB0 /* iBeaconTest1Tests.swift */; };
 		5E08D5D61C72756A002F1AB0 /* iBeaconTest1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E08D5D51C72756A002F1AB0 /* iBeaconTest1UITests.swift */; };
 		5E4803C51C997FE700B98EF5 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4803C41C997FE700B98EF5 /* FourthViewController.swift */; };
-		5EB116911C9C47BA00E6862D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB116901C9C47BA00E6862D /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +51,6 @@
 		5E08D5D51C72756A002F1AB0 /* iBeaconTest1UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iBeaconTest1UITests.swift; sourceTree = "<group>"; };
 		5E08D5D71C72756A002F1AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E4803C41C997FE700B98EF5 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
-		5EB116901C9C47BA00E6862D /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +81,9 @@
 		5E08D5A71C727568002F1AB0 = {
 			isa = PBXGroup;
 			children = (
-				5E08D5B21C727569002F1AB0 /* iBeaconTest1 */,
-				5E08D5C91C72756A002F1AB0 /* iBeaconTest1Tests */,
-				5E08D5D41C72756A002F1AB0 /* iBeaconTest1UITests */,
+				5E08D5B21C727569002F1AB0 /* VisioBeacons */,
+				5E08D5C91C72756A002F1AB0 /* VisioBeaconsTests */,
+				5E08D5D41C72756A002F1AB0 /* VisioBeaconsUITests */,
 				5E08D5B11C727569002F1AB0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -100,11 +98,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5E08D5B21C727569002F1AB0 /* iBeaconTest1 */ = {
+		5E08D5B21C727569002F1AB0 /* VisioBeacons */ = {
 			isa = PBXGroup;
 			children = (
 				5E08D5B31C727569002F1AB0 /* AppDelegate.swift */,
-				5EB116901C9C47BA00E6862D /* TableViewController.swift */,
 				5E08D5B51C727569002F1AB0 /* FirstViewController.swift */,
 				5E4803C41C997FE700B98EF5 /* FourthViewController.swift */,
 				5E08D5B71C727569002F1AB0 /* SecondViewController.swift */,
@@ -113,24 +110,27 @@
 				5E08D5BE1C72756A002F1AB0 /* LaunchScreen.storyboard */,
 				5E08D5C11C72756A002F1AB0 /* Info.plist */,
 			);
+			name = VisioBeacons;
 			path = iBeaconTest1;
 			sourceTree = "<group>";
 		};
-		5E08D5C91C72756A002F1AB0 /* iBeaconTest1Tests */ = {
+		5E08D5C91C72756A002F1AB0 /* VisioBeaconsTests */ = {
 			isa = PBXGroup;
 			children = (
 				5E08D5CA1C72756A002F1AB0 /* iBeaconTest1Tests.swift */,
 				5E08D5CC1C72756A002F1AB0 /* Info.plist */,
 			);
+			name = VisioBeaconsTests;
 			path = iBeaconTest1Tests;
 			sourceTree = "<group>";
 		};
-		5E08D5D41C72756A002F1AB0 /* iBeaconTest1UITests */ = {
+		5E08D5D41C72756A002F1AB0 /* VisioBeaconsUITests */ = {
 			isa = PBXGroup;
 			children = (
 				5E08D5D51C72756A002F1AB0 /* iBeaconTest1UITests.swift */,
 				5E08D5D71C72756A002F1AB0 /* Info.plist */,
 			);
+			name = VisioBeaconsUITests;
 			path = iBeaconTest1UITests;
 			sourceTree = "<group>";
 		};
@@ -267,7 +267,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E08D5B81C727569002F1AB0 /* SecondViewController.swift in Sources */,
-				5EB116911C9C47BA00E6862D /* TableViewController.swift in Sources */,
 				5E08D5B41C727569002F1AB0 /* AppDelegate.swift in Sources */,
 				5E08D5B61C727569002F1AB0 /* FirstViewController.swift in Sources */,
 				5E4803C51C997FE700B98EF5 /* FourthViewController.swift in Sources */,
@@ -417,7 +416,7 @@
 				INFOPLIST_FILE = iBeaconTest1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JM.iBeaconTest1;
+				PRODUCT_BUNDLE_IDENTIFIER = JM.VisioBeacons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -432,7 +431,7 @@
 				INFOPLIST_FILE = iBeaconTest1/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = JM.iBeaconTest1;
+				PRODUCT_BUNDLE_IDENTIFIER = JM.VisioBeacons;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
