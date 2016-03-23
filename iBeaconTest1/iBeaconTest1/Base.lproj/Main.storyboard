@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pgQ-mA-9aT">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -102,10 +102,18 @@
             </objects>
             <point key="canvasLocation" x="1642" y="-640"/>
         </scene>
+        <!--Tutorial Page View Controller-->
+        <scene sceneID="4lc-cO-P14">
+            <objects>
+                <pageViewController storyboardIdentifier="ViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="pgQ-mA-9aT" customClass="TutorialPageViewController" customModule="iBeaconTest1" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7GG-Lo-WdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2322" y="849"/>
+        </scene>
         <!--Route Preview-->
         <scene sceneID="BNj-Jm-TGd">
             <objects>
-                <viewController id="EJV-ze-Bql" customClass="FourthViewController" customModule="iBeaconTest1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="EJV-ze-Bql" customClass="RootViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3bG-4y-5Lp"/>
                         <viewControllerLayoutGuide type="bottom" id="91u-5X-VyR"/>
@@ -138,19 +146,22 @@
             <point key="canvasLocation" x="1642" y="177"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="7Nf-a5-43q">
+        <scene sceneID="IKv-t4-wAW">
             <objects>
-                <viewController id="9fL-m1-uKo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageContentViewController" id="Fow-ru-bWE" customClass="ViewController" customModule="iBeaconTest1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wTJ-ea-iem"/>
-                        <viewControllerLayoutGuide type="bottom" id="LkS-u2-rrn"/>
+                        <viewControllerLayoutGuide type="top" id="8t1-lj-v67"/>
+                        <viewControllerLayoutGuide type="bottom" id="6l7-Yh-Mcc"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DfL-Ee-a4Y">
+                    <view key="view" contentMode="scaleToFill" id="bFj-Ct-Ayi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welkom pagina 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0aG-oa-lQz">
-                                <rect key="frame" x="7" y="147" width="131" height="169"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HIq-4Z-aln">
+                                <rect key="frame" x="145" y="101" width="310" height="414"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welkom u gebruikt de visio app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7a-Iq-YEi">
+                                <rect key="frame" x="145" y="28" width="301" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -158,10 +169,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="HIq-4Z-aln" id="Laq-Ps-W0O"/>
+                        <outlet property="lblTitle" destination="g7a-Iq-YEi" id="oab-91-zYR"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pEU-l8-so7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZbE-GI-Xiy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2354" y="177"/>
+            <point key="canvasLocation" x="2318" y="159"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

@@ -17,6 +17,8 @@
 		5E08D5D61C72756A002F1AB0 /* iBeaconTest1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E08D5D51C72756A002F1AB0 /* iBeaconTest1UITests.swift */; };
 		5E4803C31C997F3400B98EF5 /* ThirdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4803C21C997F3400B98EF5 /* ThirdViewController.swift */; };
 		5E4803C51C997FE700B98EF5 /* FourthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4803C41C997FE700B98EF5 /* FourthViewController.swift */; };
+		9E623BD11CA2B39900E9D6F6 /* TutorialPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E623BD01CA2B39900E9D6F6 /* TutorialPageViewController.swift */; };
+		9E623BD51CA2B68900E9D6F6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E623BD41CA2B68900E9D6F6 /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,8 @@
 		5E08D5D71C72756A002F1AB0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E4803C21C997F3400B98EF5 /* ThirdViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThirdViewController.swift; sourceTree = "<group>"; };
 		5E4803C41C997FE700B98EF5 /* FourthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthViewController.swift; sourceTree = "<group>"; };
+		9E623BD01CA2B39900E9D6F6 /* TutorialPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialPageViewController.swift; sourceTree = "<group>"; };
+		9E623BD41CA2B68900E9D6F6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,9 +109,11 @@
 			children = (
 				5E08D5B31C727569002F1AB0 /* AppDelegate.swift */,
 				5E08D5B51C727569002F1AB0 /* FirstViewController.swift */,
+				5E08D5B71C727569002F1AB0 /* SecondViewController.swift */,
 				5E4803C21C997F3400B98EF5 /* ThirdViewController.swift */,
 				5E4803C41C997FE700B98EF5 /* FourthViewController.swift */,
-				5E08D5B71C727569002F1AB0 /* SecondViewController.swift */,
+				9E623BD01CA2B39900E9D6F6 /* TutorialPageViewController.swift */,
+				9E623BD41CA2B68900E9D6F6 /* ViewController.swift */,
 				5E08D5B91C727569002F1AB0 /* Main.storyboard */,
 				5E08D5BC1C727569002F1AB0 /* Assets.xcassets */,
 				5E08D5BE1C72756A002F1AB0 /* LaunchScreen.storyboard */,
@@ -268,7 +274,9 @@
 			files = (
 				5E08D5B81C727569002F1AB0 /* SecondViewController.swift in Sources */,
 				5E08D5B41C727569002F1AB0 /* AppDelegate.swift in Sources */,
+				9E623BD11CA2B39900E9D6F6 /* TutorialPageViewController.swift in Sources */,
 				5E4803C31C997F3400B98EF5 /* ThirdViewController.swift in Sources */,
+				9E623BD51CA2B68900E9D6F6 /* ViewController.swift in Sources */,
 				5E08D5B61C727569002F1AB0 /* FirstViewController.swift in Sources */,
 				5E4803C51C997FE700B98EF5 /* FourthViewController.swift in Sources */,
 			);
