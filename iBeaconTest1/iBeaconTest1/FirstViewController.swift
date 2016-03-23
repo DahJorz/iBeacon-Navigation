@@ -55,7 +55,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     let images = [
         27120: "firstCrossing",
-        36783: " "
+        36783: "firstCrossingContrast"
     ]
     
     override func viewDidLoad() {
@@ -84,7 +84,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         if (knownBeacons.count > 0){
             let closestBeacon = knownBeacons[0] as CLBeacon
             self.view.backgroundColor = self.colors[closestBeacon.minor.integerValue]
-            naarVisioImageView.image = UIImage(named: "firstCrossing")
+            naarVisioImageView.image = UIImage(named: self.images[closestBeacon.minor.integerValue]!)
             //label.text = self.names[closestBeacon.minor.integerValue]
             //let label = UILabel(frame: CGRectMake(0, 0, 200, 21))
             //label.center = CGPointMake(160, 284)
