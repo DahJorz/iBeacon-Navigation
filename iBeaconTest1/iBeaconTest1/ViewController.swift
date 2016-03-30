@@ -10,22 +10,16 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var lblTitle: UILabel!
-    
-    @IBOutlet weak var imageView: UIImageView!
-    
-    var pageIndex: Int!
-    var titleText: String!
-    var imageFile: String!
+   
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.imageView.image = UIImage(named: self.imageFile)
-        self.lblTitle.text = self.titleText
-        
-
+        if let vc = storyboard?.instantiateViewControllerWithIdentifier("PageOneViewController"){
+        self.addChildViewController(vc)
+        self.view.addSubview(vc.view)
+        }
         // Do any additional setup after loading the view.
     }
 

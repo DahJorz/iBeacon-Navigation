@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pgQ-mA-9aT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="w6K-I4-9Lr">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -102,18 +102,10 @@
             </objects>
             <point key="canvasLocation" x="1642" y="-640"/>
         </scene>
-        <!--Tutorial Page View Controller-->
-        <scene sceneID="4lc-cO-P14">
-            <objects>
-                <pageViewController storyboardIdentifier="ViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="pgQ-mA-9aT" customClass="TutorialPageViewController" customModule="iBeaconTest1" customModuleProvider="target" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7GG-Lo-WdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2322" y="849"/>
-        </scene>
         <!--Route Preview-->
         <scene sceneID="BNj-Jm-TGd">
             <objects>
-                <viewController id="EJV-ze-Bql" customClass="RootViewController" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="EJV-ze-Bql" customClass="ViewController" customModule="iBeaconTest1" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3bG-4y-5Lp"/>
                         <viewControllerLayoutGuide type="bottom" id="91u-5X-VyR"/>
@@ -121,21 +113,6 @@
                     <view key="view" contentMode="scaleToFill" id="5Io-Ef-FZK">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welkom pagina 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjs-QD-RWw">
-                                <rect key="frame" x="207" y="15" width="171" height="86"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ako-logo" translatesAutoresizingMaskIntoConstraints="NO" id="5OJ-mj-iWq">
-                                <rect key="frame" x="142" y="121" width="294" height="374"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Kza-dT-76u" appends="YES" id="E4G-i4-Xtt"/>
-                                </connections>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Route Preview" image="first" id="Jtg-WQ-9KG"/>
@@ -148,7 +125,7 @@
         <!--View Controller-->
         <scene sceneID="IKv-t4-wAW">
             <objects>
-                <viewController storyboardIdentifier="PageContentViewController" id="Fow-ru-bWE" customClass="ViewController" customModule="iBeaconTest1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PageOneViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fow-ru-bWE" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8t1-lj-v67"/>
                         <viewControllerLayoutGuide type="bottom" id="6l7-Yh-Mcc"/>
@@ -157,17 +134,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HIq-4Z-aln">
-                                <rect key="frame" x="145" y="101" width="310" height="414"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stoplicht" translatesAutoresizingMaskIntoConstraints="NO" id="HIq-4Z-aln">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welkom u gebruikt de visio app" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7a-Iq-YEi">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Page 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7a-Iq-YEi">
                                 <rect key="frame" x="145" y="28" width="301" height="44"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HIq-4Z-aln" firstAttribute="top" secondItem="bFj-Ct-Ayi" secondAttribute="top" id="6B4-9U-E2j"/>
+                            <constraint firstItem="HIq-4Z-aln" firstAttribute="leading" secondItem="bFj-Ct-Ayi" secondAttribute="leading" id="bjP-s5-4np"/>
+                            <constraint firstItem="6l7-Yh-Mcc" firstAttribute="top" secondItem="HIq-4Z-aln" secondAttribute="bottom" id="d7v-ut-tZh"/>
+                            <constraint firstAttribute="trailing" secondItem="HIq-4Z-aln" secondAttribute="trailing" id="ssf-KZ-7sj"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="HIq-4Z-aln" id="Laq-Ps-W0O"/>
@@ -176,7 +159,51 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZbE-GI-Xiy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2318" y="159"/>
+            <point key="canvasLocation" x="2316" y="177"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="yfM-fi-Kha">
+            <objects>
+                <viewController storyboardIdentifier="PageTheeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JXC-ZO-lL8" customClass="ViewController" customModule="iBeaconTest1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="90f-Kc-eXF"/>
+                        <viewControllerLayoutGuide type="bottom" id="QGL-us-whd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gI7-vW-8x0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7A-ib-0gt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2310" y="853"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="c6K-Sj-kOK">
+            <objects>
+                <viewController storyboardIdentifier="PageTwoViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="5Xo-5S-TLX" customClass="ViewController" customModule="iBeaconTest1" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YEH-WP-pXb"/>
+                        <viewControllerLayoutGuide type="bottom" id="cTw-3M-dSg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7hG-Wm-NaC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ndu-dD-pjS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1642" y="863"/>
+        </scene>
+        <!--Tutorial Page View Controller-->
+        <scene sceneID="17y-ea-DOC">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="w6K-I4-9Lr" customClass="TutorialPageViewController" customModule="iBeaconTest1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zOW-3S-s6R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2994" y="827"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -216,13 +243,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="itB-qs-wu3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="716" y="563"/>
+            <point key="canvasLocation" x="724" y="533"/>
         </scene>
     </scenes>
     <resources>
-        <image name="ako-logo" width="632" height="308"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
+        <image name="stoplicht" width="1200" height="900"/>
     </resources>
-    <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
 </document>
