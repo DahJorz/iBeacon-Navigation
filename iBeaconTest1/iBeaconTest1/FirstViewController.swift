@@ -55,7 +55,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     let images = [
         27120: "firstCrossing",
-        36783: "firstCrossingContrast"
+        36783: "firstCrossingContrast2",//weird ass beacon doesn't work
+        22239: "firstCrossingContrast"
     ]
     
     override func viewDidLoad() {
@@ -83,23 +84,33 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         
         if (knownBeacons.count > 0){
             let closestBeacon = knownBeacons[0] as CLBeacon
-            self.view.backgroundColor = self.colors[closestBeacon.minor.integerValue]
-            naarVisioImageView.image = UIImage(named: self.images[closestBeacon.minor.integerValue]!)
+            //self.view.backgroundColor = self.colors[closestBeacon.minor.integerValue]
+            self.naarVisioTextView.textColor = UIColor(red: 255/255, green: 255/255, blue:0/255, alpha: 1)
+            self.naarVisioTextView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue:255/255, alpha: 1)
+            
+            if((self.images[closestBeacon.minor.integerValue]) != nil){
+                let locationImage = UIImage(named: self.images[closestBeacon.minor.integerValue]!)
+                if(locationImage != nil){
+                    self.naarVisioImageView.image = locationImage
+                }
+            }
+        
+            self.naarVisioTextView.text = self.names[closestBeacon.minor.integerValue]
             //label.text = self.names[closestBeacon.minor.integerValue]
             //let label = UILabel(frame: CGRectMake(0, 0, 200, 21))
             //label.center = CGPointMake(160, 284)
             //label.textAlignment = NSTextAlignment.Center
             //label.text = self.names[closestBeacon.minor.integerValue]
-            instruction.text = self.names[closestBeacon.minor.integerValue]
+            //instruction.text = self.names[closestBeacon.minor.integerValue]
             
             //label.textColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
             //label.backgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
             
-            if(closestBeacon.proximity == CLProximity.Near){
-                accuracy.text = "Near"}
-            if(closestBeacon.proximity == CLProximity.Immediate){
-                accuracy.text = "Immediate"
-            }
+            //if(closestBeacon.proximity == CLProximity.Near){
+            //    accuracy.text = "Near"}
+            //if(closestBeacon.proximity == CLProximity.Immediate){
+            //    accuracy.text = "Immediate"
+            //}
             
             //let accuracyInMeters = String(knownBeacons[0].proximity)
             //let accuracyText = String(accuracyInMeters)
