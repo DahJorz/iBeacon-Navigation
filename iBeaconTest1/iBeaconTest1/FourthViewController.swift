@@ -13,8 +13,20 @@ class FourthViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
+        
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        
+        leftSwipe.direction = .Left
+        rightSwipe.direction = .Right
+        
+        view.addGestureRecognizer(leftSwipe)
+        view.addGestureRecognizer(rightSwipe)
         // Do any additional setup after loading the view.
+        //if let vc = storyboard?.instantiateViewControllerWithIdentifier("PageOneViewController"){
+        //    self.addChildViewController(vc)
+        //    self.view.addSubview(vc.view)
+        //}
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,5 +44,17 @@ class FourthViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func handleSwipes(sender:UISwipeGestureRecognizer) {
+        if (sender.direction == .Left) {
+            print("Swipe Left")
+            self.view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue:0/255, alpha: 1)
+        }
+        
+        if (sender.direction == .Right) {
+            print("Swipe Right")
+            self.view.backgroundColor = UIColor(red: 0/255, green: 255/255, blue:255/255, alpha: 1)
+        }
+    }
 
 }
