@@ -10,51 +10,102 @@ import UIKit
 
 class FourthViewController: UIViewController {
     
+    @IBOutlet var previewImage: UIImageView!
+    @IBOutlet var previewText: UITextView!
+    
+    let images = [
+        "firstCrossingContrast2",//weird ass beacon doesn't work
+        "firstCrossing",
+        "firstCrossingContrast",
+        "firstCrossingContrast2",//weird ass beacon doesn't work
+        "firstCrossing",
+        "firstCrossingContrast"
+    ]
+    //should contain as many entries as images
+    let instructions = [ //text shown on screen when beacon is closest
+        "1", //KILZ
+        "2", //KT80
+        "3", //vVmc
+        //"zr3i", //zr3i
+        //"Chfq", //Chfq
+        //"WPYp", //WPYp
+        //"B5nr", //B5nr
+        "4", //XX1f
+        "5", //icvL
+    ]
+    
+    var previewIndex = 0
+    
+    var locationImage = UIImage(named: "second")
+
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         
         let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
         let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let upSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
         
         leftSwipe.direction = .Left
         rightSwipe.direction = .Right
-        
+        upSwipe.direction = .Up
+        downSwipe.direction = .Down
+    
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)
-        // Do any additional setup after loading the view.
-        //if let vc = storyboard?.instantiateViewControllerWithIdentifier("PageOneViewController"){
-        //    self.addChildViewController(vc)
-        //    self.view.addSubview(vc.view)
-        //}
+        view.addGestureRecognizer(upSwipe)
+        view.addGestureRecognizer(downSwipe)
+        
+        if(UIImage(named: self.images[previewIndex]) != nil){
+            locationImage = UIImage(named: self.images[previewIndex])
+            
+            if(locationImage != nil){
+                self.previewImage.image = locationImage
+                self.previewText.text = instructions[previewIndex]
+            }
+        }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+    
     
     func handleSwipes(sender:UISwipeGestureRecognizer) {
-        if (sender.direction == .Left) {
-            print("Swipe Left")
-            self.view.backgroundColor = UIColor(red: 255/255, green: 255/255, blue:0/255, alpha: 1)
+        if (sender.direction == .Left || sender.direction == .Up) {
+            if(previewIndex<instructions.count-1){
+                previewIndex++
+            } else {
+                previewIndex = 0
+            }
+            
+            if(UIImage(named: self.images[previewIndex]) != nil){
+                locationImage = UIImage(named: self.images[previewIndex])
+            
+                if(locationImage != nil){
+                    self.previewImage.image = locationImage
+                    self.previewText.text = instructions[previewIndex]
+                }
+            }
         }
         
-        if (sender.direction == .Right) {
-            print("Swipe Right")
-            self.view.backgroundColor = UIColor(red: 0/255, green: 255/255, blue:255/255, alpha: 1)
+        if (sender.direction == .Right || sender.direction == .Down) {
+            if(previewIndex>0){
+                previewIndex--
+            } else {
+                previewIndex = instructions.count-1
+            }
+            
+            if(UIImage(named: self.images[previewIndex]) != nil){
+                locationImage = UIImage(named: self.images[previewIndex])
+                
+                if(locationImage != nil){
+                    self.previewImage.image = locationImage
+                    self.previewText.text = instructions[previewIndex]
+                }
+            }
         }
     }
-
 }
+

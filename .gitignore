@@ -1,0 +1,6 @@
+$ git status
+
+# Untracked files:
+
+iBeaconTest1/VisioBeacons.xcodeproj/project.xcworkspace/xcuserdata/jordymatsari.xcuserdatad/UserInterfaceState.xcuserstate
+iBeaconTest1/VisioBeacons.xcodeproj/xcuserdata/jordymatsari.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
