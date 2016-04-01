@@ -26,10 +26,6 @@ class FourthViewController: UIViewController {
         "1", //KILZ
         "2", //KT80
         "3", //vVmc
-        //"zr3i", //zr3i
-        //"Chfq", //Chfq
-        //"WPYp", //WPYp
-        //"B5nr", //B5nr
         "4", //XX1f
         "5", //icvL
     ]
