@@ -60,6 +60,9 @@ class FourthViewController: UIViewController {
                 self.previewText.text = instructions[previewIndex]
             }
         }
+        
+        self.previewText.textColor = UIColor(red: 255/255, green: 255/255, blue:255/255, alpha: 1)
+        self.previewText.backgroundColor = UIColor(red: 0/255, green: 0/255, blue:0/255, alpha: 1)
     }
     
     override func didReceiveMemoryWarning() {

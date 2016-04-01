@@ -48,8 +48,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         
         locationManager.startRangingBeaconsInRegion(region)
         
-        self.naarVisioTextView.textColor = UIColor(red: 255/255, green: 255/255, blue:0/255, alpha: 1)
-        self.naarVisioTextView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue:255/255, alpha: 1)
+        self.naarVisioTextView.textColor = UIColor(red: 255/255, green: 255/255, blue:255/255, alpha: 1)
+        self.naarVisioTextView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue:0/255, alpha: 1)
         self.naarVisioTextView.text = "Welkom, zodra u bij een beacon in de buurt bent begint de route!"
     }
 
