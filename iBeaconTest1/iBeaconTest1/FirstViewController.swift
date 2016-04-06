@@ -20,22 +20,27 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E")!, identifier: "Visios")
     
+    var lastInstruction = "hoi"
+    
     let names = [ //text shown on screen when beacon is closest
-        36783: "KILz -> Rechts", //KILZ
-        22239: "KT80 -> Links", //KT80
-        27120: "vVmc -> Rechts", //vVmc
+        //36783: "KILz -> Rechts", //KILZ
+        22239: "Wees alert, dit is een stoplicht met dubbele oversteek met fietspad. U steekt hier eerst het fietspad daarna komt u bij de stoplichten", //KT80
+        27120: "U steekt het fietspad weer over, volgt de geleidelijn. U kunt hier het DTG gebouw aan uw rechterhand als gidslijn gebruiken", //vVmc
         //2376:  "zr3i", //zr3i
         //54482: "Chfq", //Chfq
-        //55620: "WPYp", //WPYp
-        //41997: "B5nr", //B5nr
-        3992:  "XX1f -> Rechts", //XX1f
-        24799: "icvL -> Rechts", //icvL
+        55620: "Wees alert, dit is een stoplicht met dubbele oversteek met fietspad. U steekt hier eerst het fietspad daarna komt u bij de stoplichten", //WPYp
+        41997: "U steekt het fietspad weer over, volgt de geleidelijn. U kunt hier het DTG gebouw aan uw rechterhand als gidslijn gebruiken", //B5nr
+        3992:  "U bent nu aangekomen bij Visio, u kunt u melden bij de receptie.", //XX1f
+        24799: "U bent nu aangekomen bij Visio, u kunt u melden bij de receptie.", //icvL
     ]
     
     let images = [
-        27120: "firstCrossing",
-        36783: "firstCrossingContrast2",//weird ass beacon doesn't work
-        22239: "firstCrossingContrast"
+        55620: "photo3",//WPYp
+        41997: "photo4",//B5nr
+        3992: "photo5",//XX1f
+        22239: "photo3",//KT80
+        27120: "photo4",//vVmc
+        24799: "photo5"//icvL
     ]
     
     override func viewDidLoad() {
@@ -71,6 +76,10 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
                 }
             }
             self.naarVisioTextView.text = self.names[closestBeacon.minor.integerValue]
+            if(self.names[closestBeacon.minor.integerValue] != self.lastInstruction){
+                UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.naarVisioTextView.text)
+                self.lastInstruction = self.names[closestBeacon.minor.integerValue]!
+            }
         }
     }
 }
