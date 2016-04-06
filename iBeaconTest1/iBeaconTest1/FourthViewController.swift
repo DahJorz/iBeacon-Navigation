@@ -10,6 +10,9 @@ import UIKit
 
 class FourthViewController: UIViewController {
     
+    @IBOutlet var pageLabel: UILabel!
+    @IBOutlet var nextButton: UIButton!
+    @IBOutlet var previousButton: UIButton!
     @IBOutlet var previewImage: UIImageView!
     @IBOutlet var previewText: UITextView!
     
@@ -19,6 +22,14 @@ class FourthViewController: UIViewController {
         "photo3",//Chfq
         "photo4",//XX1f
         "photo5" //
+    ]
+    
+    let pageNumbers = [
+        "1/5",
+        "2/5",
+        "3/5",
+        "4/5",
+        "5/5"
     ]
     
     //should contain as many entries as images
@@ -46,7 +57,12 @@ class FourthViewController: UIViewController {
         rightSwipe.direction = .Right
         upSwipe.direction = .Up
         downSwipe.direction = .Down
-    
+        
+        previousButton.tag = 1
+        nextButton.tag = 2
+        previousButton.addTarget(self, action: "buttonHandler:", forControlEvents: UIControlEvents.TouchUpInside)
+        nextButton.addTarget(self, action: "buttonHandler:", forControlEvents: UIControlEvents.TouchUpInside)
+        
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)
         view.addGestureRecognizer(upSwipe)
@@ -61,6 +77,7 @@ class FourthViewController: UIViewController {
                 if(self.instructions[previewIndex] != self.lastInstruction){
                     UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, String(self.instructions[previewIndex]))
                     self.lastInstruction = self.instructions[previewIndex]
+                    self.pageLabel.text = self.pageNumbers[previewIndex]
                 }
             }
         }
@@ -92,6 +109,7 @@ class FourthViewController: UIViewController {
                     if(self.instructions[previewIndex] != self.lastInstruction){
                         UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.instructions[previewIndex])
                         self.lastInstruction = self.instructions[previewIndex]
+                        self.pageLabel.text = self.pageNumbers[previewIndex]
                     }
                 }
             }
@@ -113,6 +131,57 @@ class FourthViewController: UIViewController {
                     if(self.instructions[previewIndex] != self.lastInstruction){
                         UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.instructions[previewIndex])
                         self.lastInstruction = self.instructions[previewIndex]
+                        self.pageLabel.text = self.pageNumbers[previewIndex]
+                    }
+                }
+            }
+        }
+    }
+    
+    func buttonHandler(sender:UIButton)
+    {
+        if(sender.tag == 2){
+            sender.selected = false
+            if(previewIndex<instructions.count-1){
+                previewIndex++
+            } else {
+                previewIndex = 0
+            }
+            
+            if(UIImage(named: self.images[previewIndex]) != nil){
+                locationImage = UIImage(named: self.images[previewIndex])
+                
+                if(locationImage != nil){
+                    self.previewImage.image = locationImage
+                    self.previewText.text = instructions[previewIndex]
+                    if(self.instructions[previewIndex] != self.lastInstruction){
+                        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.instructions[previewIndex])
+                        self.lastInstruction = self.instructions[previewIndex]
+                        self.pageLabel.text = self.pageNumbers[previewIndex]
+                        //self.previewText.select(self.previewText)
+                    }
+                }
+            }
+            
+        }
+        if(sender.tag == 1){
+            if(previewIndex>0){
+                previewIndex--
+            } else {
+                previewIndex = instructions.count-1
+            }
+            
+            if(UIImage(named: self.images[previewIndex]) != nil){
+                locationImage = UIImage(named: self.images[previewIndex])
+                
+                if(locationImage != nil){
+                    self.previewImage.image = locationImage
+                    self.previewText.text = instructions[previewIndex]
+                    if(self.instructions[previewIndex] != self.lastInstruction){
+                        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.instructions[previewIndex])
+                        self.lastInstruction = self.instructions[previewIndex]
+                        self.pageLabel.text = self.pageNumbers[previewIndex]
+                        //self.previewText.select(self.previewText)
                     }
                 }
             }

@@ -98,6 +98,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pOB-YW-CbA">
+                                <rect key="frame" x="245" y="269" width="75" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Volgende">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQ3-vA-JoA">
+                                <rect key="frame" x="139" y="28" width="42" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOe-4P-Dxl">
+                                <rect key="frame" x="0.0" y="269" width="75" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Vorige">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -105,8 +126,11 @@
                         <inset key="imageInsets" minX="10" minY="13" maxX="10" maxY="4"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="nextButton" destination="pOB-YW-CbA" id="WYk-wh-FPG"/>
+                        <outlet property="pageLabel" destination="fQ3-vA-JoA" id="VFV-rU-OKc"/>
                         <outlet property="previewImage" destination="oax-PN-1Cy" id="VZn-1f-Tcy"/>
                         <outlet property="previewText" destination="8qJ-FB-obH" id="Vdd-TD-thM"/>
+                        <outlet property="previousButton" destination="LOe-4P-Dxl" id="eCa-gY-xxA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xZD-GQ-Rxx" userLabel="First Responder" sceneMemberID="firstResponder"/>
