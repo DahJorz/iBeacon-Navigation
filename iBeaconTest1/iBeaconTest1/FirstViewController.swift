@@ -14,9 +14,6 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var naarVisioTextView: UITextView!
     @IBOutlet var naarVisioImageView: UIImageView!
     
-    @IBOutlet var instruction: UILabel!
-    @IBOutlet var accuracy: UILabel!
-    
     let locationManager = CLLocationManager()
     let region = CLBeaconRegion(proximityUUID: NSUUID(UUIDString: "F7826DA6-4FA2-4E98-8024-BC5B71E0893E")!, identifier: "Visios")
     
