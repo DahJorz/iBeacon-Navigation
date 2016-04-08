@@ -21,23 +21,44 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     let names = [ //text shown on screen when beacon is closest
         //36783: "KILz -> Rechts", //KILZ
-        22239: "Wees alert, dit is een stoplicht met dubbele oversteek met fietspad. U steekt hier eerst het fietspad daarna komt u bij de stoplichten", //KT80
+        22239: "Wees alert, dit is een stoplicht met dubbele oversteek met fietspad. U steekt hier eerst het fietspad over, daarna komt u bij de stoplichten", //KT80
         27120: "U steekt het fietspad weer over, volgt de geleidelijn. U kunt hier het DTG gebouw aan uw rechterhand als gidslijn gebruiken", //vVmc
         //2376:  "zr3i", //zr3i
         //54482: "Chfq", //Chfq
-        55620: "Wees alert, dit is een stoplicht met dubbele oversteek met fietspad. U steekt hier eerst het fietspad daarna komt u bij de stoplichten", //WPYp
-        41997: "U steekt het fietspad weer over, volgt de geleidelijn. U kunt hier het DTG gebouw aan uw rechterhand als gidslijn gebruiken", //B5nr
-        3992:  "U bent nu aangekomen bij Visio, u kunt u melden bij de receptie.", //XX1f
+        //55620: "Wees alert, dit is een stoplicht met dubbele oversteek met fietspad. U steekt hier eerst het fietspad daarna komt u bij de stoplichten", //WPYp
+        //41997: "U steekt het fietspad weer over, volgt de geleidelijn. U kunt hier het DTG gebouw aan uw rechterhand als gidslijn gebruiken", //B5nr
+        //3992:  "U bent nu aangekomen bij Visio, u kunt u melden bij de receptie.", //XX1f
         24799: "U bent nu aangekomen bij Visio, u kunt u melden bij de receptie.", //icvL
+        43166: "bla1",//bqsy
+        34637: "bla2",//XhPb
+        31046: "bla3",//roGn
+        12271: "bla4",//Vqm8
+        63107: "bla5",//GcUL
+        38177: "bla6",//3DqG
+        63569: "bla7",//StJV
+        13828: "bla8",//PrbR
+        12166: "bla9",//bO9p
+        11032: "bla10"//vSxj
+        
     ]
     
     let images = [
-        55620: "photo3",//WPYp
-        41997: "photo4",//B5nr
-        3992: "photo5",//XX1f
+        //55620: "photo3",//WPYp
+        //41997: "photo4",//B5nr
+        //3992: "photo5",//XX1f
         22239: "photo3",//KT80
         27120: "photo4",//vVmc
-        24799: "photo5"//icvL
+        24799: "photo5",//icvL
+        43166: "second",//bqsy
+        34637: "second",//XhPb
+        31046: "second",//roGn
+        12271: "second",//Vqm8
+        63107: "second",//GcUL
+        38177: "second",//3DqG
+        63569: "second",//StJV
+        13828: "second",//PrbR
+        12166: "second",//bO9p
+        11032: "second"//vSxj
     ]
     
     override func viewDidLoad() {
@@ -72,10 +93,12 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
                     self.naarVisioImageView.image = locationImage
                 }
             }
-            self.naarVisioTextView.text = self.names[closestBeacon.minor.integerValue]
-            if(self.names[closestBeacon.minor.integerValue] != self.lastInstruction){
-                UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.naarVisioTextView.text)
-                self.lastInstruction = self.names[closestBeacon.minor.integerValue]!
+            if(self.names[closestBeacon.minor.integerValue] != nil){
+                self.naarVisioTextView.text = self.names[closestBeacon.minor.integerValue]
+                if(self.names[closestBeacon.minor.integerValue] != self.lastInstruction){
+                    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.naarVisioTextView.text)
+                    self.lastInstruction = self.naarVisioTextView.text
+                }
             }
         }
     }
