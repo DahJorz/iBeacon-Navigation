@@ -65,6 +65,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         locationManager.delegate = self
+        
         if(CLLocationManager.authorizationStatus() != CLAuthorizationStatus.AuthorizedAlways){
             locationManager.requestAlwaysAuthorization()
         }
@@ -81,7 +82,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     }
 
     func locationManager(manager: CLLocationManager, didRangeBeacons beacons: [CLBeacon], inRegion region: CLBeaconRegion) {
-        //print(beacons)
+        
         let knownBeacons = beacons.filter{ $0.proximity != CLProximity.Unknown && $0.proximity != CLProximity.Far}
         
         if (knownBeacons.count > 0){

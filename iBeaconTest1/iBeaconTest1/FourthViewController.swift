@@ -21,15 +21,17 @@ class FourthViewController: UIViewController {
         "photo2",//B5nr
         "photo3",//Chfq
         "photo4",//XX1f
-        "photo5" //
+        "photo5", //
+        "IMG_0266"//beacon 30
     ]
     
     let pageNumbers = [
-        "1/5",
-        "2/5",
-        "3/5",
-        "4/5",
-        "5/5"
+        "1/6",
+        "2/6",
+        "3/6",
+        "4/6",
+        "5/6",
+        "6/6"
     ]
     
     //should contain as many entries as images
@@ -39,6 +41,7 @@ class FourthViewController: UIViewController {
         "U loopt nu langs de Bijenkorf. Volg de gidslijn straks naar links, waarna u de geleidelijn kunt volgen naar het stoplicht. ",//Chfq
         "Wees alert, dit is een stoplicht met dubbele oversteek met fietspad. U steekt hier eerst het fietspad daarna komt u bij de stoplichten", //XX1f
         "U bent nu aangekomen bij Visio", //
+        "U steekt eerst het fietspad over en vervolgens verkeerslichten met dubbele oversteek, daarna volgt nog een fietspad. Eenmaal overgestoken volgt u de geleidelijn welke naar links afbuigt. U volgt het trottoir met aan uw rechterzijde het DTG gebouw dat u als natuurlijke gidslijn kunt gebruiken."//beacon 30
     ]
     var previewIndex = 0
     
@@ -84,6 +87,9 @@ class FourthViewController: UIViewController {
         
         self.previewText.textColor = UIColor(red: 255/255, green: 255/255, blue:255/255, alpha: 1)
         self.previewText.backgroundColor = UIColor(red: 0/255, green: 0/255, blue:0/255, alpha: 1)
+        self.previewText.becomeFirstResponder()
+        //previousButton.isAccessibilityElement = false
+        //nextButton.isAccessibilityElement = false
     }
     
     override func didReceiveMemoryWarning() {
@@ -159,6 +165,7 @@ class FourthViewController: UIViewController {
                         self.lastInstruction = self.instructions[previewIndex]
                         self.pageLabel.text = self.pageNumbers[previewIndex]
                         //self.previewText.select(self.previewText)
+                        self.previewText.selectedTextRange = self.previewText.textRangeFromPosition(self.previewText.beginningOfDocument, toPosition: self.previewText.endOfDocument)
                     }
                 }
             }
@@ -177,12 +184,14 @@ class FourthViewController: UIViewController {
                 if(locationImage != nil){
                     self.previewImage.image = locationImage
                     self.previewText.text = instructions[previewIndex]
-                    if(self.instructions[previewIndex] != self.lastInstruction){
-                        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.instructions[previewIndex])
+                    //if(self.instructions[previewIndex] != self.lastInstruction){
+                        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.previewText.text)
                         self.lastInstruction = self.instructions[previewIndex]
                         self.pageLabel.text = self.pageNumbers[previewIndex]
-                        //self.previewText.select(self.previewText)
-                    }
+                        //self.previewText.becomeFirstResponder()
+                        //self.previewText.nextResponder()
+                        self.previewText.selectedTextRange = self.previewText.textRangeFromPosition(self.previewText.beginningOfDocument, toPosition: self.previewText.endOfDocument)
+                    //}
                 }
             }
         }
