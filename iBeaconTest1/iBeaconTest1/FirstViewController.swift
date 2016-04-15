@@ -22,13 +22,11 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     var lastInstruction = "hoi"
     
     let instructions = [ //text shown on screen when beacon is closest
-        27120: "U volgt het trottoir met natuurlijke gidslijn straks mee naar links tot geleidelijn. De geleidelijn volgt u naar de oversteek.", //vVmc
+        27120: "U volgt het trottoir met natuurlijke gidslijn straks mee naar links tot geleidelijn. De geleidelijn volgt u naar de oversteek", //vVmc
         41997: "U steekt eerst het fietspad over en vervolgens verkeerslichten met dubbele oversteek, daarna volgt nog een fietspad. Eenmaal overgestoken volgt u de geleidelijn welke naar links afbuigt. U volgt het trottoir met aan uw rechterzijde het DTG gebouw dat u als natuurlijke gidslijn kunt gebruiken.", //B5nr
         3992:  "U bent aangekomen bij Visio. U kunt u melden bij de receptie. U loopt door de twee schuifdeuren naar binnen, de receptie is aan uw rechterkant.", //XX1f
-        
-        43166: "U steekt bij de verkeerslichten een dubbele verkeersweg over en aansluitend een fietspad. Eenmaal overgestoken gaat u rechts af. U blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn. U loopt langs het Altas gebouw.",//bqsy
+        43166: "U steekt bij de verkeerslichten een dubbele verkeersweg over en aansluitend een fietspad. Eenmaal overgestoken gaat u rechts af. U blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn. U loopt langs het Atlas gebouw.",//bqsy
         34637: "U nadert een dwarsliggende trap, wees hier voorzichtig. Er ligt een geleidelijn die u kunt volgen en u om de trap heen leidt, waarna u het trottoir kunt vervolgen. Aan uw rechterzijde is er wederom een gebouw dat u als natuurlijke gidslijn kunt gebruiken.",//XhPb
-        
         12271: "U nadert een in- en uitrit van een parkeergarage. U heeft hier voorrang maar wees voorzichtig en maak u zichtbaar door uw herkenningsstok/taststok in te zetten. Aan uw rechterzijde is nog steeds het gebouw dat u als natuurlijke gidslijn kunt gebruiken.",//Vqm8
         38177: "Het gebouw aan uw rechterzijde loopt ten einde. U volgt een groenstrook met een inham en waterpartij aan uw rechterzijde.",//3DqG
         63569: "U blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn. Uw weg wordt onderbroken door een in- en uitrit van een hotel. Bij het Marriott hotel staat het gebouw van Adidas en Reebok.",//StJV
@@ -82,7 +80,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         38177: "NV_3DqG",//3DqG
         63569: "NV_StJV",//StJV
         13828: "NV_PrbR",//PrbR
-        12166: "NV_b09p",//bO9p
+        12166: "NV_bO9p",//bO9p
         //11032: "NV_vSxj",//vSxj
         //54482: "NV_Chfq"//Chfq
     ]
@@ -103,7 +101,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         38177: "NV_3DqG_C",//3DqG
         63569: "NV_StJV_C",//StJV
         13828: "NV_PrbR_C",//PrbR
-        12166: "NV_b09p_C",//bO9p
+        12166: "NV_bO9p_C",//bO9p
         //11032: "NV_vSxj_C",//vSxj
         //54482: "NV_Chfq_C"//Chfq
     ]
@@ -166,8 +164,10 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
                 if(self.preferences[0] == true && self.instructionsExtra[closestBeacon.minor.integerValue] != ""){
                     self.naarVisioTextView.text = self.instructionsExtra[closestBeacon.minor.integerValue]
                 }
-                if(self.instructions[closestBeacon.minor.integerValue] != self.lastInstruction){
-                    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.naarVisioTextView.text)
+                if(self.naarVisioTextView.text != self.lastInstruction){
+                    NSLog(String(tabBarController!.selectedIndex))
+                    if(String(tabBarController!.selectedIndex) == "0"){
+                        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.naarVisioTextView.text)                    }
                     self.lastInstruction = self.naarVisioTextView.text
                 }
             }

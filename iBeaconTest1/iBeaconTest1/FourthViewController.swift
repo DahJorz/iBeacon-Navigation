@@ -17,31 +17,43 @@ class FourthViewController: UIViewController {
     @IBOutlet var previewText: UITextView!
     
     let images = [
-        "photo1",//WPYp
-        "photo2",//B5nr
-        "photo3",//Chfq
-        "photo4",//XX1f
-        "photo5", //
-        "IMG_0266"//beacon 30
+        "NV_B5nr",//B5nr
+        "NV_XX1f",//XX1f
+        "NV_vVmc",//vVmc
+        "NV_bqsy",//bqsy
+        "NV_XhPb",//XhPb
+        "NV_Vqm8",//Vqm8
+        "second",//3DqG
+        "NV_StJV",//StJV
+        "NV_PrbR",//PrbR
+        "NV_bO9p",//bO9p
     ]
     
     let pageNumbers = [
-        "1/6",
-        "2/6",
-        "3/6",
-        "4/6",
-        "5/6",
-        "6/6"
+        "1/10",
+        "2/10",
+        "3/10",
+        "4/10",
+        "5/10",
+        "6/10",
+        "7/10",
+        "8/10",
+        "9/10",
+        "10/10"
     ]
     
     //should contain as many entries as images
     let instructions = [ //text shown on screen when beacon is closest
-        "Zodra u de schuifdeur van de stationshal passeert, slaat u links af. Hier kunt u de geleidelijn volgen tot aan het stoplicht. Het busstation is rechts van u en links is er een sportschool",//WPYp
-        "Volg de geleidelijn, sla rechtsaf en volg de natuurlijke geleidelijn aan uw linkerhand. Aan de linkerhand is het atlas gebouw",//B5nr
-        "U loopt nu langs de Bijenkorf. Volg de gidslijn straks naar links, waarna u de geleidelijn kunt volgen naar het stoplicht. ",//Chfq
-        "Wees alert, dit is een stoplicht met dubbele oversteek met fietspad. U steekt hier eerst het fietspad daarna komt u bij de stoplichten", //XX1f
-        "U bent nu aangekomen bij Visio", //
-        "U steekt eerst het fietspad over en vervolgens verkeerslichten met dubbele oversteek, daarna volgt nog een fietspad. Eenmaal overgestoken volgt u de geleidelijn welke naar links afbuigt. U volgt het trottoir met aan uw rechterzijde het DTG gebouw dat u als natuurlijke gidslijn kunt gebruiken."//beacon 30
+        "U volgt het trottoir straks mee naar links. Daar pakt u de geleidelijn op richting de oversteek.", //vVmc
+        "U steekt bij de verkeerslichten over. Eenmaal overgestoken slaat u links af en blijft u het trottoir volgen met gidslijn.", //B5nr
+        "U bent aangekomen bij Visio. U kunt u melden bij de receptie.", //XX1f
+        "U nadert een dubbele oversteek met verkeerslichten en fietspad. Steek over, u blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn.",//bqsy
+        "Wees alert, u nadert een dwarsliggende trap. Volg de geleidelijn om de trap heen daarna vervolgt u het trottoir met gidslijn.",//XhPb
+        "Wees alert, u nadert een in- en uitrit van een parkeergarage.",//Vqm8
+        "U volgt een groenstrook met een inham en waterpartij aan uw rechterzijde.",//3DqG
+        "U volgt het trottoir met de gidslijn. Uw weg wordt onderbroken door een in- en uitrit van een hotel.",//StJV
+        "U slaat rechts af een voetpad op, met aan weerzijde een natuurlijke gidslijn.",//PrbR
+        "U volgt het voetpad naar links, vanaf hier kunt u de geleidelijn volgen.",//bO9p
     ]
     var previewIndex = 0
     
@@ -165,7 +177,7 @@ class FourthViewController: UIViewController {
                         self.lastInstruction = self.instructions[previewIndex]
                         self.pageLabel.text = self.pageNumbers[previewIndex]
                         //self.previewText.select(self.previewText)
-                        self.previewText.selectedTextRange = self.previewText.textRangeFromPosition(self.previewText.beginningOfDocument, toPosition: self.previewText.endOfDocument)
+                        //self.previewText.selectedTextRange = self.previewText.textRangeFromPosition(self.previewText.beginningOfDocument, toPosition: self.previewText.endOfDocument)
                     }
                 }
             }
@@ -190,7 +202,7 @@ class FourthViewController: UIViewController {
                         self.pageLabel.text = self.pageNumbers[previewIndex]
                         //self.previewText.becomeFirstResponder()
                         //self.previewText.nextResponder()
-                        self.previewText.selectedTextRange = self.previewText.textRangeFromPosition(self.previewText.beginningOfDocument, toPosition: self.previewText.endOfDocument)
+                        //self.previewText.selectedTextRange = self.previewText.textRangeFromPosition(self.previewText.beginningOfDocument, toPosition: self.previewText.endOfDocument)
                     //}
                 }
             }

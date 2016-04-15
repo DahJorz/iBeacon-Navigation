@@ -65,43 +65,43 @@ class SecondViewController: UIViewController, CLLocationManagerDelegate {
     ]
     
     let images = [
-        55620: "NV_WPYp",//WPYp
-        //41997: "NV_B5nr",//B5nr
-        3992:  "NV_XX1f",//XX1f
-        22239: "NV_KT80",//KT80
-        27120: "NV_vVmc",//vVmc
-        24799: "NV_icvL",//icvL
-        //43166: "NV_bqsy",//bqsy
-        //34637: "NV_XhPb",//XhPb
-        31046: "NV_roGn",//roGn
-        //12271: "NV_Vqm8",//Vqm8
-        63107: "NV_GcUL",//GcUL
-        38177: "NV_3DqG",//3DqG
-        //63569: "NV_StJV",//StJV
-        13828: "NV_PrbR",//PrbR
-        12166: "NV_b09p",//bO9p
-        //11032: "NV_vSxj",//vSxj
-        //54482: "NV_Chfq"//Chfq
+        55620: "NS_WPYp",//WPYp
+        //41997: "NS_B5nr",//B5nr
+        3992:  "NS_XX1f",//XX1f
+        22239: "NS_KT80",//KT80
+        27120: "NS_vVmc",//vVmc
+        24799: "NS_icvL",//icvL
+        //43166: "NS_bqsy",//bqsy
+        //34637: "NS_XhPb",//XhPb
+        31046: "NS_roGn",//roGn
+        //12271: "NS_Vqm8",//Vqm8
+        63107: "NS_GcUL",//GcUL
+        38177: "NS_3DqG",//3DqG
+        //63569: "NS_StJV",//StJV
+        13828: "NS_PrbR",//PrbR
+        12166: "NS_bO9p",//bO9p
+        //11032: "NS_vSxj",//vSxj
+        //54482: "NS_Chfq"//Chfq
     ]
     /*
     let imagesContrast = [
-        55620: "NV_WPYp_C",//WPYp
-        //41997: "NV_B5nr_C",//B5nr
-        3992:  "NV_B5nr_C",//XX1f
-        22239: "NV_KT80_C",//KT80
-        27120: "NV_vVmc_C",//vVmc
-        24799: "NV_icvL_C",//icvL
-        //43166: "NV_bqsy_C",//bqsy
-        //34637: "NV_XhPb_C",//XhPb
-        31046: "NV_roGn_C",//roGn
-        //12271: "NV_Vqm8_C",//Vqm8
-        63107: "NV_GcUL_C",//GcUL
-        38177: "NV_3DqG_C",//3DqG
-        //63569: "NV_StJV_C",//StJV
-        13828: "NV_PrbR_C",//PrbR
-        12166: "NV_b09p_C",//bO9p
-        //11032: "NV_vSxj_C",//vSxj
-        //54482: "NV_Chfq_C"//Chfq
+        55620: "NS_WPYp_C",//WPYp
+        //41997: "NS_B5nr_C",//B5nr
+        3992:  "NS_B5nr_C",//XX1f
+        22239: "NS_KT80_C",//KT80
+        27120: "NS_vVmc_C",//vVmc
+        24799: "NS_icvL_C",//icvL
+        //43166: "NS_bqsy_C",//bqsy
+        //34637: "NS_XhPb_C",//XhPb
+        31046: "NS_roGn_C",//roGn
+        //12271: "NS_Vqm8_C",//Vqm8
+        63107: "NS_GcUL_C",//GcUL
+        38177: "NS_3DqG_C",//3DqG
+        //63569: "NS_StJV_C",//StJV
+        13828: "NS_PrbR_C",//PrbR
+        12166: "NS_bO9p_C",//bO9p
+        //11032: "NS_vSxj_C",//vSxj
+        //54482: "NS_Chfq_C"//Chfq
     ]
     */
     
@@ -162,8 +162,11 @@ class SecondViewController: UIViewController, CLLocationManagerDelegate {
                 if(self.preferences[0] == true && self.instructionsExtra[closestBeacon.minor.integerValue] != ""){
                     self.naarStationTextView.text = self.instructionsExtra[closestBeacon.minor.integerValue]
                 }
-                if(self.instructions[closestBeacon.minor.integerValue] != self.lastInstruction){
-                    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.naarStationTextView.text)
+                if(self.naarStationTextView.text != self.lastInstruction){
+                    NSLog(String(tabBarController!.selectedIndex))
+                    if(String(tabBarController!.selectedIndex) == "1"){
+                        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.naarStationTextView.text)
+                    }
                     self.lastInstruction = self.naarStationTextView.text
                 }
             }
