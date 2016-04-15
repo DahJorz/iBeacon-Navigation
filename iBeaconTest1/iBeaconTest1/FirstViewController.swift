@@ -22,90 +22,92 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     var lastInstruction = "hoi"
     
     let instructions = [ //text shown on screen when beacon is closest
-        //36783: "KILz -> Rechts", //KILZ
-        22239: "Wees alert, dit is een stoplicht met dubbele oversteek met fietspad. U steekt hier eerst het fietspad over, daarna komt u bij de stoplichten", //KT80
-        27120: "U steekt het fietspad weer over, volgt de geleidelijn. U kunt hier het DTG gebouw aan uw rechterhand als gidslijn gebruiken", //vVmc
-        //2376:  "zr3i", //zr3i
-        //54482: "Chfq", //Chfq
-        //55620: "Wees alert, dit is een stoplicht met dubbele oversteek met fietspad. U steekt hier eerst het fietspad daarna komt u bij de stoplichten", //WPYp
-        //41997: "U steekt het fietspad weer over, volgt de geleidelijn. U kunt hier het DTG gebouw aan uw rechterhand als gidslijn gebruiken", //B5nr
-        //3992:  "U bent nu aangekomen bij Visio, u kunt u melden bij de receptie.", //XX1f
-        24799: "U bent nu aangekomen bij Visio, u kunt u melden bij de receptie.", //icvL
-        43166: "bla1",//bqsy
-        34637: "bla2",//XhPb
-        31046: "bla3",//roGn
-        12271: "bla4",//Vqm8
-        63107: "bla5",//GcUL
-        38177: "bla6",//3DqG
-        63569: "bla7",//StJV
-        13828: "bla8",//PrbR
-        12166: "bla9",//bO9p
-        11032: "bla10",//vSxj
-        54482: "Chfq"//Chfq
+        27120: "U volgt het trottoir met natuurlijke gidslijn straks mee naar links tot geleidelijn. De geleidelijn volgt u naar de oversteek.", //vVmc
+        41997: "U steekt eerst het fietspad over en vervolgens verkeerslichten met dubbele oversteek, daarna volgt nog een fietspad. Eenmaal overgestoken volgt u de geleidelijn welke naar links afbuigt. U volgt het trottoir met aan uw rechterzijde het DTG gebouw dat u als natuurlijke gidslijn kunt gebruiken.", //B5nr
+        3992:  "U bent aangekomen bij Visio. U kunt u melden bij de receptie. U loopt door de twee schuifdeuren naar binnen, de receptie is aan uw rechterkant.", //XX1f
+        
+        43166: "U steekt bij de verkeerslichten een dubbele verkeersweg over en aansluitend een fietspad. Eenmaal overgestoken gaat u rechts af. U blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn. U loopt langs het Altas gebouw.",//bqsy
+        34637: "U nadert een dwarsliggende trap, wees hier voorzichtig. Er ligt een geleidelijn die u kunt volgen en u om de trap heen leidt, waarna u het trottoir kunt vervolgen. Aan uw rechterzijde is er wederom een gebouw dat u als natuurlijke gidslijn kunt gebruiken.",//XhPb
+        
+        12271: "U nadert een in- en uitrit van een parkeergarage. U heeft hier voorrang maar wees voorzichtig en maak u zichtbaar door uw herkenningsstok/taststok in te zetten. Aan uw rechterzijde is nog steeds het gebouw dat u als natuurlijke gidslijn kunt gebruiken.",//Vqm8
+        38177: "Het gebouw aan uw rechterzijde loopt ten einde. U volgt een groenstrook met een inham en waterpartij aan uw rechterzijde.",//3DqG
+        63569: "U blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn. Uw weg wordt onderbroken door een in- en uitrit van een hotel. Bij het Marriott hotel staat het gebouw van Adidas en Reebok.",//StJV
+        13828: "U slaat rechts af een voetpad op, met aan weerzijde een natuurlijke gidslijn. Zo loopt u voorbij twee gebouwen.",//PrbR
+        12166: "U volgt het voetpad naar links, vanaf hier kunt u de geleidelijn volgen. U staat nu voor het gebouw van Visio de geleidelijn buigt straks naar rechts.",//bO9p
+        //11032: "",//vSxj
+        //36783: "", //KILZ
+        //22239: "", //KT80
+        //63107: "",//GcUL
+        //31046: "",//roGn
+        //24799: "", //icvL
+        //2376:  "", //zr3i
+        //54482: "", //Chfq
+        //55620: "", //WPYp
     ]
     
     let instructionsExtra = [ //text shown on screen when beacon is closest
-        //36783: "KILz -> Rechts", //KILZ
-        22239: "Wees alert, dit is een stoplicht met dubbele oversteek met fietspad. U steekt hier eerst het fietspad over, daarna komt u bij de stoplichten", //KT80
-        27120: "U steekt het fietspad weer over, volgt de geleidelijn. U kunt hier het DTG gebouw aan uw rechterhand als gidslijn gebruiken", //vVmc
-        //2376:  "zr3i", //zr3i
-        //54482: "Chfq", //Chfq
-        //55620: "Wees alert, dit is een stoplicht met dubbele oversteek met fietspad. U steekt hier eerst het fietspad daarna komt u bij de stoplichten", //WPYp
-        //41997: "U steekt het fietspad weer over, volgt de geleidelijn. U kunt hier het DTG gebouw aan uw rechterhand als gidslijn gebruiken", //B5nr
-        //3992:  "U bent nu aangekomen bij Visio, u kunt u melden bij de receptie.", //XX1f
-        24799: "U bent nu aangekomen bij Visio, u kunt u melden bij de receptie.", //icvL
-        43166: "bla1",//bqsy
-        34637: "bla2",//XhPb
-        31046: "bla3",//roGn
-        12271: "bla4",//Vqm8
-        63107: "bla5",//GcUL
-        38177: "bla6",//3DqG
-        63569: "bla7",//StJV
-        13828: "bla8",//PrbR
-        12166: "bla9",//bO9p
-        11032: "bla10",//vSxj
-        54482: "super lange tekst :D"//Chfq
+        27120: "U volgt het trottoir straks mee naar links. Daar pakt u de geleidelijn op richting de oversteek.", //vVmc
+        41997: "U steekt bij de verkeerslichten over. Eenmaal overgestoken slaat u links af en blijft u het trottoir volgen met gidslijn.", //B5nr
+        3992:  "U bent aangekomen bij Visio. U kunt u melden bij de receptie.", //XX1f
+        43166: "U nadert een dubbele oversteek met verkeerslichten en fietspad. Steek over, u blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn.",//bqsy
+        34637: "Wees alert, u nadert een dwarsliggende trap. Volg de geleidelijn om de trap heen daarna vervolgt u het trottoir met gidslijn.",//XhPb
+        12271: "Wees alert, u nadert een in- en uitrit van een parkeergarage.",//Vqm8
+        38177: "U volgt een groenstrook met een inham en waterpartij aan uw rechterzijde.",//3DqG
+        63569: "U volgt het trottoir met de gidslijn. Uw weg wordt onderbroken door een in- en uitrit van een hotel.",//StJV
+        13828: "U slaat rechts af een voetpad op, met aan weerzijde een natuurlijke gidslijn.",//PrbR
+        12166: "U volgt het voetpad naar links, vanaf hier kunt u de geleidelijn volgen.",//bO9p
+        //11032: "",//vSxj
+        //36783: "", //KILZ
+        //22239: "", //KT80
+        //63107: "",//GcUL
+        //31046: "",//roGn
+        //24799: "", //icvL
+        //2376:  "", //zr3i
+        //54482: "", //Chfq
+        //55620: "", //WPYp
     ]
     
     let images = [
         //55620: "NV_WPYp",//WPYp
-        //41997: "NV_B5nr",//B5nr
-        //3992: "NV_XX1f",//XX1f
-        22239: "NV_KT80",//KT80
+        41997: "NV_B5nr",//B5nr
+        3992: "NV_XX1f",//XX1f
+        //22239: "NV_KT80",//KT80
         27120: "NV_vVmc",//vVmc
-        24799: "NV_icvL",//icvL
+        //24799: "NV_icvL",//icvL
         43166: "NV_bqsy",//bqsy
         34637: "NV_XhPb",//XhPb
-        31046: "NV_roGn",//roGn
+        //31046: "NV_roGn",//roGn
         12271: "NV_Vqm8",//Vqm8
-        63107: "NV_GcUL",//GcUL
+        //63107: "NV_GcUL",//GcUL
         38177: "NV_3DqG",//3DqG
         63569: "NV_StJV",//StJV
         13828: "NV_PrbR",//PrbR
         12166: "NV_b09p",//bO9p
-        11032: "NV_vSxj",//vSxj
-        54482: "NV_Chfq"//Chfq
+        //11032: "NV_vSxj",//vSxj
+        //54482: "NV_Chfq"//Chfq
     ]
     
+    /*
     let imagesContrast = [
         //55620: "NV_WPYp_C",//WPYp
-        //41997: "NV_B5nr_C",//B5nr
-        //3992: "NV_B5nr_C",//XX1f
-        22239: "NV_KT80_C",//KT80
+        41997: "NV_B5nr_C",//B5nr
+        3992: "NV_B5nr_C",//XX1f
+        //22239: "NV_KT80_C",//KT80
         27120: "NV_vVmc_C",//vVmc
-        24799: "NV_icvL_C",//icvL
+        //24799: "NV_icvL_C",//icvL
         43166: "NV_bqsy_C",//bqsy
         34637: "NV_XhPb_C",//XhPb
-        31046: "NV_roGn_C",//roGn
+        //31046: "NV_roGn_C",//roGn
         12271: "NV_Vqm8_C",//Vqm8
-        63107: "NV_GcUL_C",//GcUL
+        //63107: "NV_GcUL_C",//GcUL
         38177: "NV_3DqG_C",//3DqG
         63569: "NV_StJV_C",//StJV
         13828: "NV_PrbR_C",//PrbR
         12166: "NV_b09p_C",//bO9p
-        11032: "NV_vSxj_C",//vSxj
-        54482: "NV_Chfq_C"//Chfq
+        //11032: "NV_vSxj_C",//vSxj
+        //54482: "NV_Chfq_C"//Chfq
     ]
+    */
     
     var preferences = [false,false,false,false]
     
@@ -150,18 +152,18 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
             let closestBeacon = knownBeacons[0] as CLBeacon
             
             if((self.images[closestBeacon.minor.integerValue]) != nil){
-                var locationImage = UIImage(named: self.images[closestBeacon.minor.integerValue]!)
-                if(self.preferences[1] == true){
+                let locationImage = UIImage(named: self.images[closestBeacon.minor.integerValue]!)
+                /*if(self.preferences[1] == true && self.imagesContrast[closestBeacon.minor.integerValue] != nil){
                     NSLog(String(self.preferences[0]))
                     locationImage = UIImage(named: self.imagesContrast[closestBeacon.minor.integerValue]!)
-                }
+                }*/
                 if(locationImage != nil){
                     self.naarVisioImageView.image = locationImage
                 }
             }
             if(self.instructions[closestBeacon.minor.integerValue] != nil){
                 self.naarVisioTextView.text = self.instructions[closestBeacon.minor.integerValue]
-                if(self.preferences[0] == true){
+                if(self.preferences[0] == true && self.instructionsExtra[closestBeacon.minor.integerValue] != ""){
                     self.naarVisioTextView.text = self.instructionsExtra[closestBeacon.minor.integerValue]
                 }
                 if(self.instructions[closestBeacon.minor.integerValue] != self.lastInstruction){
