@@ -98,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="830" y="-606"/>
         </scene>
-        <!--Route Preview-->
+        <!--Bekijk Route-->
         <scene sceneID="BNj-Jm-TGd">
             <objects>
                 <viewController id="EJV-ze-Bql" customClass="FourthViewController" customModule="iBeaconTest1" customModuleProvider="target" sceneMemberID="viewController">
@@ -155,7 +155,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Route Preview" image="first" id="Jtg-WQ-9KG"/>
+                    <tabBarItem key="tabBarItem" title="Bekijk Route" image="first" id="Jtg-WQ-9KG"/>
                     <connections>
                         <outlet property="nextButton" destination="pOB-YW-CbA" id="WYk-wh-FPG"/>
                         <outlet property="pageLabel" destination="fQ3-vA-JoA" id="VFV-rU-OKc"/>
