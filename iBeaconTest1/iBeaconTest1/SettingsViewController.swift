@@ -35,10 +35,10 @@ class SettingsViewController: UIViewController {
             distanceSwitch.on = defaults.boolForKey("distanceState")
         }
         
-        extraSwitch.addTarget(self, action: "switchHandler:", forControlEvents: UIControlEvents.ValueChanged)
-        contrastSwitch.addTarget(self, action: "switchHandler:", forControlEvents: UIControlEvents.ValueChanged)
-        timeSwitch.addTarget(self, action: "switchHandler:", forControlEvents: UIControlEvents.ValueChanged)
-        distanceSwitch.addTarget(self, action: "switchHandler:", forControlEvents: UIControlEvents.ValueChanged)
+        extraSwitch.addTarget(self, action: #selector(SettingsViewController.switchHandler(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        contrastSwitch.addTarget(self, action: #selector(SettingsViewController.switchHandler(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        timeSwitch.addTarget(self, action: #selector(SettingsViewController.switchHandler(_:)), forControlEvents: UIControlEvents.ValueChanged)
+        distanceSwitch.addTarget(self, action: #selector(SettingsViewController.switchHandler(_:)), forControlEvents: UIControlEvents.ValueChanged)
     }
     
     override func didReceiveMemoryWarning() {

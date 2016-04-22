@@ -128,128 +128,65 @@ class FourthViewController: UIViewController {
         view.addGestureRecognizer(upSwipe)
         view.addGestureRecognizer(downSwipe)
         
-        if(UIImage(named: self.images[previewIndex]) != nil){
-            locationImage = UIImage(named: self.images[previewIndex])
-            
-            if(locationImage != nil){
-                self.previewImage.image = locationImage
-                self.previewText.text = instructions[previewIndex]
-                if(self.instructions[previewIndex] != self.lastInstruction){
-                    UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, String(self.instructions[previewIndex]))
-                    self.lastInstruction = self.instructions[previewIndex]
-                    self.pageLabel.text = self.pageNumbers[previewIndex]
-                }
-            }
-        }
+        self.pageHandler()
         
         self.previewText.textColor = UIColor(red: 255/255, green: 255/255, blue:255/255, alpha: 1)
         self.previewText.backgroundColor = UIColor(red: 0/255, green: 0/255, blue:0/255, alpha: 1)
         self.previewText.becomeFirstResponder()
-        //previousButton.isAccessibilityElement = false
-        //nextButton.isAccessibilityElement = false
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    
-    
-    func handleSwipes(sender:UISwipeGestureRecognizer) {
+    func handleSwipes(sender: UISwipeGestureRecognizer) {
         if (sender.direction == .Left || sender.direction == .Up) {
-            if(previewIndex<instructions.count-1){
-                previewIndex += 1
-            } else {
-                previewIndex = 0
-            }
-            
-            if(UIImage(named: self.images[previewIndex]) != nil){
-                locationImage = UIImage(named: self.images[previewIndex])
-            
-                if(locationImage != nil){
-                    self.previewImage.image = locationImage
-                    self.previewText.text = instructions[previewIndex]
-                    if(self.instructions[previewIndex] != self.lastInstruction){
-                        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.instructions[previewIndex])
-                        self.lastInstruction = self.instructions[previewIndex]
-                        self.pageLabel.text = self.pageNumbers[previewIndex]
-                    }
-                }
-            }
-        }
+            self.indexHandler("next")
+        } 
         
         if (sender.direction == .Right || sender.direction == .Down) {
-            if(previewIndex>0){
-                previewIndex -= 1
-            } else {
-                previewIndex = instructions.count-1
-            }
-            
-            if(UIImage(named: self.images[previewIndex]) != nil){
-                locationImage = UIImage(named: self.images[previewIndex])
-                
-                if(locationImage != nil){
-                    self.previewImage.image = locationImage
-                    self.previewText.text = instructions[previewIndex]
-                    if(self.instructions[previewIndex] != self.lastInstruction){
-                        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.instructions[previewIndex])
-                        self.lastInstruction = self.instructions[previewIndex]
-                        self.pageLabel.text = self.pageNumbers[previewIndex]
-                    }
-                }
-            }
+            self.indexHandler("previous")
         }
     }
     
     func buttonHandler(sender:UIButton)
     {
         if(sender.tag == 2){
-            sender.selected = false
-            if(previewIndex<instructions.count-1){
-                previewIndex += 1
-            } else {
-                previewIndex = 0
-            }
-            
-            if(UIImage(named: self.images[previewIndex]) != nil){
-                locationImage = UIImage(named: self.images[previewIndex])
-                
-                if(locationImage != nil){
-                    self.previewImage.image = locationImage
-                    self.previewText.text = instructions[previewIndex]
-                    if(self.instructions[previewIndex] != self.lastInstruction){
-                        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.instructions[previewIndex])
-                        self.lastInstruction = self.instructions[previewIndex]
-                        self.pageLabel.text = self.pageNumbers[previewIndex]
-                        //self.previewText.select(self.previewText)
-                        //self.previewText.selectedTextRange = self.previewText.textRangeFromPosition(self.previewText.beginningOfDocument, toPosition: self.previewText.endOfDocument)
-                    }
-                }
-            }
-            
+            self.indexHandler("next")
         }
+        
         if(sender.tag == 1){
+            self.indexHandler("previous")
+        }
+    }
+    
+    func indexHandler(direction: String){
+        if (direction == "previous"){
             if(previewIndex>0){
                 previewIndex -= 1
             } else {
                 previewIndex = instructions.count-1
             }
+        } else {
+            if(previewIndex<instructions.count-1){
+                previewIndex += 1
+            } else {
+                previewIndex = 0
+            }
+        }
+        self.pageHandler()
+    }
+    
+    func pageHandler(){
+        if(UIImage(named: self.images[previewIndex]) != nil){
+            locationImage = UIImage(named: self.images[previewIndex])
             
-            if(UIImage(named: self.images[previewIndex]) != nil){
-                locationImage = UIImage(named: self.images[previewIndex])
-                
-                if(locationImage != nil){
-                    self.previewImage.image = locationImage
-                    self.previewText.text = instructions[previewIndex]
-                    //if(self.instructions[previewIndex] != self.lastInstruction){
-                        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.previewText.text)
-                        self.lastInstruction = self.instructions[previewIndex]
-                        self.pageLabel.text = self.pageNumbers[previewIndex]
-                        //self.previewText.becomeFirstResponder()
-                        //self.previewText.nextResponder()
-                        //self.previewText.selectedTextRange = self.previewText.textRangeFromPosition(self.previewText.beginningOfDocument, toPosition: self.previewText.endOfDocument)
-                    //}
-                }
+            if(locationImage != nil){
+                self.previewImage.image = locationImage
+                self.previewText.text = instructions[previewIndex]
+                UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, self.previewText.text)
+                self.lastInstruction = self.instructions[previewIndex]
+                self.pageLabel.text = self.pageNumbers[previewIndex]
             }
         }
     }
