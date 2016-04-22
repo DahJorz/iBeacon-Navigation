@@ -120,7 +120,7 @@ class SecondViewController: UIViewController, CLLocationManagerDelegate {
         
         self.naarStationTextView.textColor = UIColor(red: 255/255, green: 255/255, blue:255/255, alpha: 1)
         self.naarStationTextView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue:0/255, alpha: 1)
-        self.naarStationTextView.text = "Welkom, zodra u bij een beacon in de buurt bent begint de route!"
+        self.naarStationTextView.text = "Het startpunt van de route die u naar en Visio op de Hettenheuvelweg 41 en naar het Bijlmer station lijdt begint als u een Beacon nadert. Een Beacon is een apparaat dat een signaal verstuurd dat opgevangen wordt met Bluetooth. "
     }
     
     override func didReceiveMemoryWarning() {

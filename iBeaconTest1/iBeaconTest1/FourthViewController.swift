@@ -17,29 +17,59 @@ class FourthViewController: UIViewController {
     @IBOutlet var previewText: UITextView!
     
     let images = [
-        "NV_B5nr",//B5nr
-        "NV_XX1f",//XX1f
-        "NV_vVmc",//vVmc
-        "NV_bqsy",//bqsy
-        "NV_XhPb",//XhPb
-        "NV_Vqm8",//Vqm8
-        "second",//3DqG
-        "NV_StJV",//StJV
-        "NV_PrbR",//PrbR
-        "NV_bO9p",//bO9p
+        "01_IMG_0444.JPG",
+        "02_IMG_0228.JPG",
+        "03_IMG_0445.JPG",
+        "04_IMG_0446.JPG",
+        "05_IMG_0447.JPG",
+        "06_IMG_0449.JPG",
+        "07_IMG_0451.JPG",
+        "08_IMG_0453.JPG",
+        "09_IMG_0225.JPG",
+        "11_IMG_0236.JPG",
+        "12_IMG_0385.JPG",
+        "13_IMG_0389.JPG",
+        "14_IMG_0391.JPG",
+        "15_IMG_0397.JPG",
+        "16_IMG_0395.JPG",
+        "17_IMG_0257.JPG",
+        "18_IMG_0265.JPG",
+        "19_.JPG",
+        "20_IMG_0477.JPG",
+        "21_IMG_0426.JPG",
+        "22_IMG_0280.JPG",
+        "23_IMG_0431.JPG",
+        "24_IMG_0438.JPG",
+        "25_IMG_0287.JPG",
+        "26_IMG_0440.JPG"
     ]
     
     let pageNumbers = [
-        "1/10",
-        "2/10",
-        "3/10",
-        "4/10",
-        "5/10",
-        "6/10",
-        "7/10",
-        "8/10",
-        "9/10",
-        "10/10"
+        "1/25",
+        "2/25",
+        "3/25",
+        "4/25",
+        "5/25",
+        "6/25",
+        "7/25",
+        "8/25",
+        "9/25",
+        "10/25",
+        "11/25",
+        "12/25",
+        "13/25",
+        "14/25",
+        "15/25",
+        "16/25",
+        "17/25",
+        "18/25",
+        "19/25",
+        "20/25",
+        "21/25",
+        "22/25",
+        "23/25",
+        "24/25",
+        "25/25"
     ]
     
     //should contain as many entries as images
@@ -54,6 +84,21 @@ class FourthViewController: UIViewController {
         "U volgt het trottoir met de gidslijn. Uw weg wordt onderbroken door een in- en uitrit van een hotel.",//StJV
         "U slaat rechts af een voetpad op, met aan weerzijde een natuurlijke gidslijn.",//PrbR
         "U volgt het voetpad naar links, vanaf hier kunt u de geleidelijn volgen.",//bO9p
+        "11",
+        "12",
+        "13",
+        "14",
+        "15",
+        "16",
+        "17",
+        "18",
+        "19",
+        "20",
+        "21",
+        "22",
+        "23",
+        "24",
+        "25",
     ]
     var previewIndex = 0
     
@@ -63,10 +108,10 @@ class FourthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        let upSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
-        let downSwipe = UISwipeGestureRecognizer(target: self, action: Selector("handleSwipes:"))
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(FourthViewController.handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(FourthViewController.handleSwipes(_:)))
+        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(FourthViewController.handleSwipes(_:)))
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(FourthViewController.handleSwipes(_:)))
         
         leftSwipe.direction = .Left
         rightSwipe.direction = .Right
@@ -75,8 +120,8 @@ class FourthViewController: UIViewController {
         
         previousButton.tag = 1
         nextButton.tag = 2
-        previousButton.addTarget(self, action: "buttonHandler:", forControlEvents: UIControlEvents.TouchUpInside)
-        nextButton.addTarget(self, action: "buttonHandler:", forControlEvents: UIControlEvents.TouchUpInside)
+        previousButton.addTarget(self, action: #selector(FourthViewController.buttonHandler(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        nextButton.addTarget(self, action: #selector(FourthViewController.buttonHandler(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)
@@ -113,7 +158,7 @@ class FourthViewController: UIViewController {
     func handleSwipes(sender:UISwipeGestureRecognizer) {
         if (sender.direction == .Left || sender.direction == .Up) {
             if(previewIndex<instructions.count-1){
-                previewIndex++
+                previewIndex += 1
             } else {
                 previewIndex = 0
             }
@@ -135,7 +180,7 @@ class FourthViewController: UIViewController {
         
         if (sender.direction == .Right || sender.direction == .Down) {
             if(previewIndex>0){
-                previewIndex--
+                previewIndex -= 1
             } else {
                 previewIndex = instructions.count-1
             }
@@ -161,7 +206,7 @@ class FourthViewController: UIViewController {
         if(sender.tag == 2){
             sender.selected = false
             if(previewIndex<instructions.count-1){
-                previewIndex++
+                previewIndex += 1
             } else {
                 previewIndex = 0
             }
@@ -185,7 +230,7 @@ class FourthViewController: UIViewController {
         }
         if(sender.tag == 1){
             if(previewIndex>0){
-                previewIndex--
+                previewIndex -= 1
             } else {
                 previewIndex = instructions.count-1
             }
