@@ -13,11 +13,13 @@ class SettingsController: UITableViewController {
     @IBOutlet var contrastSwitch: UISwitch!
     @IBOutlet var timeSwitch: UISwitch!
     @IBOutlet var distanceSwitch: UISwitch!
+    
+    var defaults = NSUserDefaults.standardUserDefaults()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var defaults = NSUserDefaults.standardUserDefaults()
+        defaults = NSUserDefaults.standardUserDefaults()
         
         if (defaults.objectForKey("extraSate") != nil) {
             extraSwitch.on = defaults.boolForKey("extraState")
@@ -40,7 +42,7 @@ class SettingsController: UITableViewController {
     }
     
     @IBAction func saveSwitchState(sender: AnyObject) {
-        var defaults = NSUserDefaults.standardUserDefaults()
+        defaults = NSUserDefaults.standardUserDefaults()
         
         if extraSwitch.on {
             defaults.setBool(true, forKey: "extraState")

@@ -108,10 +108,10 @@ class FourthViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(FourthViewController.handleSwipes(_:)))
-        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(FourthViewController.handleSwipes(_:)))
-        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(FourthViewController.handleSwipes(_:)))
-        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(FourthViewController.handleSwipes(_:)))
+        let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipes(_:)))
+        let rightSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipes(_:)))
+        let upSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipes(_:)))
+        let downSwipe = UISwipeGestureRecognizer(target: self, action: #selector(self.handleSwipes(_:)))
         
         leftSwipe.direction = .Left
         rightSwipe.direction = .Right
@@ -120,8 +120,8 @@ class FourthViewController: UIViewController {
         
         previousButton.tag = 1
         nextButton.tag = 2
-        previousButton.addTarget(self, action: #selector(FourthViewController.buttonHandler(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        nextButton.addTarget(self, action: #selector(FourthViewController.buttonHandler(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        previousButton.addTarget(self, action: #selector(self.buttonHandler(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        nextButton.addTarget(self, action: #selector(self.buttonHandler(_:)), forControlEvents: UIControlEvents.TouchUpInside)
         
         view.addGestureRecognizer(leftSwipe)
         view.addGestureRecognizer(rightSwipe)

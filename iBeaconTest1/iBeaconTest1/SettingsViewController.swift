@@ -48,34 +48,26 @@ class SettingsViewController: UIViewController {
     func switchHandler(sender: AnyObject) {
         if extraSwitch.on {
             defaults.setBool(true, forKey: "extraState")
-            NSLog("extraState true")
         } else {
             defaults.setBool(false, forKey: "extraState")
-            NSLog("extraState false")
         }
         
         if contrastSwitch.on {
             defaults.setBool(true, forKey: "contrastState")
-            NSLog("contrastState true")
         } else {
             defaults.setBool(false, forKey: "contrastState")
-            NSLog("contrastState false")
         }
         
         if timeSwitch.on {
             defaults.setBool(true, forKey: "timeState")
-            NSLog("timeState true")
         } else {
             defaults.setBool(false, forKey: "timeState")
-            NSLog("timeState false")
         }
         
         if distanceSwitch.on {
             defaults.setBool(true, forKey: "distanceState")
-            NSLog("distanceState true")
         } else {
             defaults.setBool(false, forKey: "distanceState")
-            NSLog("distanceState false")
         }
     }
 }
