@@ -23,13 +23,13 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
     
     let instructions = [ //text shown on screen when beacon is closest
         27120: "U volgt het trottoir met natuurlijke gidslijn straks mee naar links tot geleidelijn. De geleidelijn volgt u naar de oversteek", //vVmc
-        41997: "U steekt eerst het fietspad over en vervolgens verkeerslichten met dubbele oversteek, daarna volgt nog een fietspad. Eenmaal overgestoken volgt u de geleidelijn welke naar links afbuigt. U volgt het trottoir met aan uw rechterzijde het DTG gebouw dat u als natuurlijke gidslijn kunt gebruiken.", //B5nr
+        41997: "U steekt eerst het fietspad over en vervolgens verkeerslichten met dubbele oversteek, daarna volgt nog een fietspad.", //B5nr
         3992:  "U bent aangekomen bij Visio. U kunt u melden bij de receptie. U loopt door de twee schuifdeuren naar binnen, de receptie is aan de linkerkant.", //XX1f
         43166: "U steekt bij de verkeerslichten een dubbele verkeersweg over en aansluitend een fietspad. Eenmaal overgestoken gaat u rechts af. U blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn. U loopt langs het Atlas ArenaA gebouw.",//bqsy
         34637: "U nadert een dwarsliggende trap, wees hier voorzichtig. Er ligt een geleidelijn die u kunt volgen en u om de trap heen leidt, waarna u het trottoir kunt vervolgen. Aan uw rechterzijde is er wederom een gebouw dat u als natuurlijke gidslijn kunt gebruiken.",//XhPb
         12271: "U nadert een in- en uitrit van een parkeergarage. U heeft hier voorrang maar wees voorzichtig en maak u zichtbaar door uw herkenningsstok/taststok in te zetten. Aan uw rechterzijde is nog steeds het gebouw dat u als natuurlijke gidslijn kunt gebruiken.",//Vqm8
         38177: "Het gebouw aan uw rechterzijde loopt ten einde. U volgt een groenstrook met een inham en waterpartij aan uw rechterzijde.",//3DqG
-        63569: "Wees alert uw weg wordt onderbroken door een in- en uitrit van een hotel. Bij het Marriott hotel staat het gebouw van Adidas en Reebok. U blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn.",//StJV
+        63569: "Wees alert uw weg wordt onderbroken door een in- en uitrit van een hotel. Bij het Marriott hotel staat het gebouw van Adidas en Reebok. U blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn. De grasrand wordt 3 keer onderbroken.",//StJV
         13828: "U slaat rechts af een voetpad op, met aan weerzijde een natuurlijke gidslijn. Zo loopt u voorbij twee gebouwen.",//PrbR
         12166: "U volgt het voetpad naar links, vanaf hier kunt u de geleidelijn volgen. U staat nu voor het gebouw van Visio de geleidelijn buigt straks naar rechts.",//bO9p
         //11032: "",//vSxj
@@ -38,20 +38,20 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         //63107: "",//GcUL
         //31046: "",//roGn
         //24799: "", //icvL
-        //2376:  "", //zr3i
+        2376:  "Eenmaal overgestoken volgt u de geleidelijn welke naar links afbuigt. U volgt het trottoir met aan uw rechterzijde het DTG gebouw dat u als natuurlijke gidslijn kunt gebruiken.", //zr3i
         //54482: "", //Chfq
         //55620: "", //WPYp
     ]
     
     let instructionsExtra = [ //text shown on screen when beacon is closest
-        27120: "U volgt het trottoir straks mee naar links. Daar pakt u de geleidelijn op richting de oversteek.", //vVmc
+        27120: "U volgt het trottoir met grasrand als natuurlijke gidslijn. De grasrand wordt 3 keer onderbroken.", //vVmc
         41997: "U steekt bij de verkeerslichten over. Eenmaal overgestoken slaat u links af en blijft u het trottoir volgen met gidslijn.", //B5nr
         3992:  "U bent aangekomen bij Visio. U kunt u melden bij de receptie.", //XX1f
         43166: "U nadert een dubbele oversteek met verkeerslichten en fietspad. Steek over, u blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn.",//bqsy
         34637: "Wees alert, u nadert een dwarsliggende trap. Volg de geleidelijn om de trap heen daarna vervolgt u het trottoir met gidslijn.",//XhPb
         12271: "Wees alert, u nadert een in- en uitrit van een parkeergarage.",//Vqm8
         38177: "U volgt een groenstrook met een inham en waterpartij aan uw rechterzijde.",//3DqG
-        63569: "Uw weg wordt onderbroken door een in- en uitrit van een hotel. U volgt het trottoir met de gidslijn.",//StJV
+        63569: "Uw weg wordt onderbroken door een in- en uitrit van een hotel. U volgt het trottoir met de gidslijn. De grasrand wordt 3 keer onderbroken.",//StJV
         13828: "U slaat rechts af een voetpad op, met aan weerzijde een natuurlijke gidslijn.",//PrbR
         12166: "U volgt het voetpad naar links, vanaf hier kunt u de geleidelijn volgen.",//bO9p
         //11032: "",//vSxj
@@ -82,7 +82,8 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         13828: "NV_PrbR",//PrbR
         12166: "NV_bO9p",//bO9p
         //11032: "NV_vSxj",//vSxj
-        //54482: "NV_Chfq"//Chfq
+        //54482: "",//Chfq,
+        2376: "NV_B5nr"//zr3i
     ]
     
     /*
@@ -122,7 +123,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         
         self.naarVisioTextView.textColor = UIColor(red: 255/255, green: 255/255, blue:255/255, alpha: 1)
         self.naarVisioTextView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue:0/255, alpha: 1)
-        self.naarVisioTextView.text = "Het startpunt van de route die u naar en Visio op de Hettenheuvelweg 41 en naar het Bijlmer station lijdt begint als u een Beacon nadert. Een Beacon is een apparaat dat een signaal verstuurd dat opgevangen wordt met Bluetooth. "
+        self.naarVisioTextView.text = "De route die u naar Visio leidt begint als u een Beacon nadert. Deze begint bij het eerste stoplicht, nadat u het busstation voorbij bent gelopen."
     }
 
     override func didReceiveMemoryWarning() {

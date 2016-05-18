@@ -23,10 +23,10 @@ class SecondViewController: UIViewController, CLLocationManagerDelegate {
     let instructions = [ //text shown on screen when beacon is closest
         //36783: "", //KILZ
         22239: "U blijft het trottoir volgen met aan de rechterhand een graslijn en aan de rechterhand een verkeersweg. Uw weg wordt onderbroken door een in- en uitrit van een hotel. Bij het Marriott hotel staat het gebouw van Adidas en Reebok.", //KT80
-        27120: "U volgt het trottoir met grasrand als natuurlijke gidslijn. Tot u de volgende instructie ontvangt.", //vVmc
+        27120: "U volgt het trottoir met grasrand als natuurlijke gidslijn. De grasrand wordt 3 keer onderbroken.", //vVmc
         //2376:  "", //zr3i
-        //54482: "", //Chfq
-        55620: "U steekt eerst het fietspad over en vervolgens verkeerslichten met dubbele oversteek, daarna volgt nog een fietspad. Eenmaal overgestoken volgt u de geleidelijn welke naar links afbuigt. U volgt het trottoir met aan uw rechterzijde het Bijenkorf gebouw. U kunt het gras als natuurlijke gidslijn gebruiken.", //WPYp
+        54482: "Eenmaal overgestoken volgt u de geleidelijn welke naar links afbuigt. U volgt het trottoir met aan uw rechterzijde het Bijenkorf gebouw. U kunt het gras als natuurlijke gidslijn gebruiken.", //Chfq
+        55620: "Sla rechts af en steek het fietspad over en vervolgens verkeerslichten met dubbele oversteek, daarna volgt nog een fietspad.", //WPYp
         //41997: "", //B5nr
         3992:  "Bij het verlaten van het pand gaat u linksaf en volgt u de geleidelijn, deze leidt u links om het gebouw van Visio heen. Aan het einde komt u uit op het voetpad.", //XX1f
         24799: "U nadert het viaduct. Volg de gidslijn tot u aan uw rechterhand een muur vindt, meteen aan de linkerzijde vindt u een geleidelijn die u naar de oversteek leidt. U steekt het fietspad over en steekt bij de verkeerslichten een dubbele verkeersweg over. Aan de overzijde kunt u de geleidelijn aanhouden die u volgt naar de ingang van het station.", //icvL
@@ -35,7 +35,7 @@ class SecondViewController: UIViewController, CLLocationManagerDelegate {
         31046: "U nadert een dwarsliggende trap, wees hier voorzichtig. Er ligt een geleidelijn die u kunt volgen en u om de trap heen leidt, waarna u het trottoir kunt vervolgen. Aan uw linkerzijde is er wederom een gebouw dat u als natuurlijke gidslijn kunt gebruiken.",//roGn
         //12271: "",//Vqm8
         63107: "U nadert een in- en uitrit van een parkeergarage. U heeft hier voorrang maar wees voorzichtig en maak u zichtbaar door uw herkenningsstok/taststok in te zetten. Aan uw linkerzijde is nog steeds het gebouw dat u als natuurlijke gidslijn kunt gebruiken.",//GcUL
-        38177: "U bent de waterpartij voorbij. U loopt nu langs een groot gebouw aan uw linkerkant, dat u als gidslijn kan gebruiken.",//3DqG
+        //38177: "U bent de waterpartij voorbij. U loopt nu langs een groot gebouw aan uw linkerkant, dat u als gidslijn kan gebruiken.",//3DqG
         //63569: "",//StJV
         13828: "U slaat links af een voetpad op. Links van u is er een natuurlijke gidslijn in de vorm van een grasrand, deze wordt onderbroken door een inham en gaat even later over in een gebouw.",//PrbR
         12166: "Aan het einde komt u uit op het voetpad, u gaat rechtsaf en vervolgt het voetpad in de richting van de hoofdweg.",//bO9p
@@ -57,7 +57,7 @@ class SecondViewController: UIViewController, CLLocationManagerDelegate {
         31046: "Wees alert, u nadert een dwarsliggende trap. Volg de geleidelijn om de trap heen daarna vervolgt u het trottoir met gidslijn.",//roGn
         //12271: "",//Vqm8
         63107: "Wees alert, U nadert een in -en uitrit van een parkeergarage.",//GcUL
-        38177: "Houd het gebouw links van u aan als gidslijn",//3DqG
+        //38177: "Houd het gebouw links van u aan als gidslijn",//3DqG
         //63569: "",//StJV
         13828: "U volgt een groenstrook met een inham en waterpartij aan uw linkerzijde.",//PrbR
         12166: "U slaat rechts af een voetpad op, met aan weerzijde een graslijn.",//bO9p
@@ -76,12 +76,13 @@ class SecondViewController: UIViewController, CLLocationManagerDelegate {
         31046: "NS_roGn",//roGn
         //12271: "NS_Vqm8",//Vqm8
         63107: "NS_GcUL",//GcUL
-        38177: "NS_3DqG",//3DqG
+        //38177: "NS_3DqG",//3DqG
         //63569: "NS_StJV",//StJV
         13828: "NS_PrbR",//PrbR
         12166: "NS_bO9p",//bO9p
         //11032: "NS_vSxj",//vSxj
-        //54482: "NS_Chfq"//Chfq
+        //54482: "NS_WPYp",//Chfq
+        //2376: ""//zr3i
     ]
     /*
     let imagesContrast = [
@@ -120,7 +121,7 @@ class SecondViewController: UIViewController, CLLocationManagerDelegate {
         
         self.naarStationTextView.textColor = UIColor(red: 255/255, green: 255/255, blue:255/255, alpha: 1)
         self.naarStationTextView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue:0/255, alpha: 1)
-        self.naarStationTextView.text = "Het startpunt van de route die u naar en Visio op de Hettenheuvelweg 41 en naar het Bijlmer station lijdt begint als u een Beacon nadert. Een Beacon is een apparaat dat een signaal verstuurd dat opgevangen wordt met Bluetooth. "
+        self.naarStationTextView.text = "De route die u naar station Amsterdam Bijlmer ArenA leidt begint als u een Beacon nadert. Deze begint bij de uitgang van het Visio gebouw."
     }
     
     override func didReceiveMemoryWarning() {
