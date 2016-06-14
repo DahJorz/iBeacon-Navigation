@@ -25,19 +25,19 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         27120: "U volgt het trottoir met natuurlijke gidslijn straks mee naar links tot geleidelijn. De geleidelijn volgt u naar de oversteek", //vVmc
         41997: "U steekt eerst het fietspad over en vervolgens verkeerslichten met dubbele oversteek, daarna volgt nog een fietspad.", //B5nr
         3992:  "U bent aangekomen bij Visio. U kunt u melden bij de receptie. U loopt door de twee schuifdeuren naar binnen, de receptie is aan de linkerkant.", //XX1f
-        43166: "U steekt bij de verkeerslichten een dubbele verkeersweg over en aansluitend een fietspad. Eenmaal overgestoken gaat u rechts af. U blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn. U loopt langs het Atlas ArenaA gebouw.",//bqsy
+        43166: "U steekt bij de verkeerslichten een dubbele verkeersweg over en aansluitend een fietspad. Eenmaal overgestoken volgt u de geleidelijn naar rechts.",//bqsy
         34637: "U nadert een dwarsliggende trap, wees hier voorzichtig. Er ligt een geleidelijn die u kunt volgen en u om de trap heen leidt, waarna u het trottoir kunt vervolgen. Aan uw rechterzijde is er wederom een gebouw dat u als natuurlijke gidslijn kunt gebruiken.",//XhPb
         12271: "U nadert een in- en uitrit van een parkeergarage. U heeft hier voorrang maar wees voorzichtig en maak u zichtbaar door uw herkenningsstok/taststok in te zetten. Aan uw rechterzijde is nog steeds het gebouw dat u als natuurlijke gidslijn kunt gebruiken.",//Vqm8
         38177: "Het gebouw aan uw rechterzijde loopt ten einde. U volgt een groenstrook met een inham en waterpartij aan uw rechterzijde.",//3DqG
         63569: "Wees alert uw weg wordt onderbroken door een in- en uitrit van een hotel. Bij het Marriott hotel staat het gebouw van Adidas en Reebok. U blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn. De grasrand wordt 3 keer onderbroken.",//StJV
-        13828: "U slaat rechts af een voetpad op, met aan weerzijde een natuurlijke gidslijn. Zo loopt u voorbij twee gebouwen.",//PrbR
+        13828: "U slaat rechts af een voetpad op, met aan weerzijde een natuurlijke gidslijn. U loopt een gebouw voorbij.",//PrbR
         12166: "U volgt het voetpad naar links, vanaf hier kunt u de geleidelijn volgen. U staat nu voor het gebouw van Visio de geleidelijn buigt straks naar rechts.",//bO9p
         //11032: "",//vSxj
         //36783: "", //KILZ
         //22239: "", //KT80
         //63107: "",//GcUL
         //31046: "",//roGn
-        //24799: "", //icvL
+        24799: "U blijft het trottoir volgen met aan de linkerhand een grasrand als natuurlijke gidslijn. U loopt langs het Atlas Arena gebouw. De grasrand wordt 3 keer onderbroken.", //icvL
         2376:  "Eenmaal overgestoken volgt u de geleidelijn welke naar links afbuigt. U volgt het trottoir met aan uw rechterzijde het DTG gebouw dat u als natuurlijke gidslijn kunt gebruiken.", //zr3i
         //54482: "", //Chfq
         //55620: "", //WPYp
@@ -71,7 +71,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate {
         3992: "NV_XX1f",//XX1f
         //22239: "NV_KT80",//KT80
         27120: "NV_vVmc",//vVmc
-        //24799: "NV_icvL",//icvL
+        24799: "NV_bqsy",//icvL
         43166: "NV_bqsy",//bqsy
         34637: "NV_XhPb",//XhPb
         //31046: "NV_roGn",//roGn

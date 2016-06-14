@@ -22,15 +22,15 @@ class SecondViewController: UIViewController, CLLocationManagerDelegate {
     
     let instructions = [ //text shown on screen when beacon is closest
         //36783: "", //KILZ
-        22239: "U blijft het trottoir volgen met aan de rechterhand een graslijn en aan de rechterhand een verkeersweg. Uw weg wordt onderbroken door een in- en uitrit van een hotel. Bij het Marriott hotel staat het gebouw van Adidas en Reebok.", //KT80
+        22239: "Uw weg wordt onderbroken door een in- en uitrit van het Marriot hotel. Vervolgens blijft U het trottoir volgen met aan de rechterhand een graslijn.", //KT80
         27120: "U volgt het trottoir met grasrand als natuurlijke gidslijn. De grasrand wordt 3 keer onderbroken.", //vVmc
         //2376:  "", //zr3i
         54482: "Eenmaal overgestoken volgt u de geleidelijn welke naar links afbuigt. U volgt het trottoir met aan uw rechterzijde het Bijenkorf gebouw. U kunt het gras als natuurlijke gidslijn gebruiken.", //Chfq
         55620: "Sla rechts af en steek het fietspad over en vervolgens verkeerslichten met dubbele oversteek, daarna volgt nog een fietspad.", //WPYp
         //41997: "", //B5nr
         3992:  "Bij het verlaten van het pand gaat u linksaf en volgt u de geleidelijn, deze leidt u links om het gebouw van Visio heen. Aan het einde komt u uit op het voetpad.", //XX1f
-        24799: "U nadert het viaduct. Volg de gidslijn tot u aan uw rechterhand een muur vindt, meteen aan de linkerzijde vindt u een geleidelijn die u naar de oversteek leidt. U steekt het fietspad over en steekt bij de verkeerslichten een dubbele verkeersweg over. Aan de overzijde kunt u de geleidelijn aanhouden die u volgt naar de ingang van het station.", //icvL
-        //43166: "",//bqsy
+        24799: "Volg de gidslijn tot u aan uw rechterhand een muur vindt, meteen aan de linkerzijde vindt u een geleidelijn die u naar een fietspad en dubbele oversteek leidt. Hier steekt u over.", //icvL
+        43166: "Eenmaal overgestoken kunt u de geleidelijn volgen die u naar de ingang van het station leidt.",//bqsy
         //34637: "",//XhPb
         31046: "U nadert een dwarsliggende trap, wees hier voorzichtig. Er ligt een geleidelijn die u kunt volgen en u om de trap heen leidt, waarna u het trottoir kunt vervolgen. Aan uw linkerzijde is er wederom een gebouw dat u als natuurlijke gidslijn kunt gebruiken.",//roGn
         //12271: "",//Vqm8
